@@ -1,11 +1,11 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Center, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function MainCarousel() {
   return (
-    <Box shadow={{ base: "md", md: "xs" }} p={{ base: "20px", md: "0" }}>
+    <Box shadow={{ base: "md", md: "md" }} p={{ base: "20px", md: "0" }}>
       <Flex justify={{ base: "center" }}>
         <Carousel
           autoPlay
@@ -58,7 +58,19 @@ function MainCarousel() {
           src="https://onemg.gumlet.io/a_ignore,w_480,h_200,c_fit,q_auto,f_auto/85bbe9a7-230b-4836-bff3-d5f451b426a7.png"
         />
       </Flex>
-      <Text></Text>
+      <Center>
+        <Heading
+          display={{ base: "none", md: "flex" }}
+          fontFamily={"Clear-Sans"}
+          fontSize={"25px"}
+          fontWeight={400}
+          color={"grey"}
+          py={"20px"}
+          align={"center"}
+        >
+          Capsule: India’s Leading Online Pharmacy & Healthcare Platform
+        </Heading>
+      </Center>
     </Box>
   );
 }

@@ -14,6 +14,7 @@ import {
   useBreakpointValue,
   useDisclosure,
   Heading,
+  Divider,
 } from "@chakra-ui/react";
 
 import { FaShoppingCart } from "react-icons/fa";
@@ -24,6 +25,8 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+// import { useContext } from "react";
+// import { AuthContext } from "../Contexts/AuthContext";
 
 const NAV_ITEMS = [
   {
@@ -49,6 +52,17 @@ const NAV_ITEMS = [
   {
     label: "CARE PLAN",
     href: "#",
+  },
+];
+
+const AUTH_ITEMS = [
+  {
+    label: "Login",
+    href: "/login",
+  },
+  {
+    label: "Signup",
+    href: "/signup",
   },
 ];
 
@@ -105,7 +119,7 @@ export default function WithSubnavigation() {
             fontSize={"sm"}
             fontWeight={400}
             variant={"link"}
-            href={"#"}
+            href={"/login"}
             borderRight={"1px solid"}
             borderRadius="none"
             pr={"10px"}
@@ -117,7 +131,7 @@ export default function WithSubnavigation() {
             fontSize={"sm"}
             fontWeight={400}
             variant={"link"}
-            href={"#"}
+            href={"/signup"}
           >
             Sign Up
           </Button>
@@ -136,6 +150,7 @@ export default function WithSubnavigation() {
             as="p"
             cursor="pointer"
             display={{ base: "none", md: "none", lg: "flex" }}
+            fontSize={"14px"}
           >
             Need Help?
           </Text>
@@ -190,6 +205,10 @@ const MobileNav = () => {
       display={{ md: "none" }}
     >
       {NAV_ITEMS.map((navItem) => (
+        <MobileNavItem key={navItem.label} {...navItem} />
+      ))}
+      <Divider />
+      {AUTH_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
     </Stack>

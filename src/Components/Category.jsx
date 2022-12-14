@@ -239,6 +239,7 @@ function Category() {
       fontFamily={"Clear Sans"}
       shadow={"sm"}
       display={{ base: "none", md: "block" }}
+      py="10px"
     >
       <Stack direction={"row"} spacing={4} justify="center">
         {CAT_ITEMS.map((navItem) => (

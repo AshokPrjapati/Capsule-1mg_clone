@@ -8,10 +8,23 @@ import {
   InputLeftAddon,
   Button,
   FormControl,
+  Box,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
 } from "@chakra-ui/react";
-import react from "react";
+import { useState } from "react";
+
+import Form from "./Form";
 
 function SignupForm() {
+  const [mobileNumber, setMobileNumber] = useState("");
+
+  const handleNumber = (number) => {
+    setMobileNumber(number);
+  };
+
   return (
     <Stack
       textAlign={"left"}
@@ -24,27 +37,10 @@ function SignupForm() {
       <Text color={"grey"} fontSize="14px" paddingBottom={{ base: 10, md: 20 }}>
         Please enter your mobile number to receive one time password (OTP)
       </Text>
-      <FormControl>
-        <InputGroup marginBottom={{ base: 10, md: 20 }}>
-          <InputLeftAddon
-            children={"+91"}
-            borderRadius={0}
-            bg="#fff"
-            border={0}
-          />
-          <Input
-            type={"number"}
-            borderRadius={0}
-            placeholder="Enter Your Number"
-            variant="flushed"
-            focusBorderColor="#ff6f61"
-            isRequired
-          />
-        </InputGroup>
-      </FormControl>
 
-      <Button bg={"#ff6f61"}>Continue</Button>
-      <Text align={"center"} color="grey">
+      <Form handleNumber={handleNumber} mobileNumber={mobileNumber} />
+
+      <Text align={"center"} color="grey" pt={3}>
         Have an account ?{" "}
         <Link color={"#ff6f61"} fontWeight="700">
           Login

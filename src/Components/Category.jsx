@@ -4,7 +4,6 @@ import {
   Box,
   Text,
   Flex,
-  Icon,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -305,7 +304,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           </Text>
         </Link>
         {subLabel.length
-          ? subLabel.map((sl) => (
+          ? subLabel.map((sl, i) => (
               <Link
                 href={href}
                 role={"group"}
@@ -317,6 +316,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
                   color: "#ff6f61",
                 }}
                 textAlign="left"
+                key={i}
               >
                 <Text fontSize={"sm"}>{sl}</Text>
               </Link>

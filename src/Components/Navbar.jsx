@@ -11,7 +11,6 @@ import {
   Popover,
   PopoverTrigger,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
   Heading,
   Divider,
@@ -19,12 +18,7 @@ import {
 
 import { FaShoppingCart } from "react-icons/fa";
 
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
-} from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 // import { useContext } from "react";
 // import { AuthContext } from "../Contexts/AuthContext";
 
@@ -167,7 +161,7 @@ export default function WithSubnavigation() {
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "#ff6f61");
   const linkHoverColor = useColorModeValue("#ff6f61", "white");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  // const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
     <Stack direction={"row"} spacing={4} align={"center"}>

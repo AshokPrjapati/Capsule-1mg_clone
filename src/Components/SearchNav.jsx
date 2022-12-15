@@ -53,7 +53,7 @@ function SearchNav() {
             borderRadius={"5px"}
             fontSize={"16px"}
             fontWeight="300"
-            _hover={"none"}
+            _hover={{}}
             py="0px"
           >
             Quick Order

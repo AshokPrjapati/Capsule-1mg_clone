@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "fName": "Ashok",
+      "lName": "Kumar",
+      "email": "eve.holt@reqres.in",
+      "gender": "Male",
+      "password": "45645648",
+      "mobileNumber": "7894564564",
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "fName": "Praveen",
+      "lName": "Kumar",
+      "email": "pk@gmail.com",
+      "gender": "Male",
+      "password": "pl123",
+      "mobileNumber": "9799191449",
+      "id": 5
+    },
+    {
+      "fName": "Ashok",
+      "lName": "Kumar",
+      "email": "ap271449@gmail.com",
+      "gender": "Male",
+      "password": "Ashok@1234",
+      "mobileNumber": "9079059893",
+      "id": 6
+    },
+    {
+      "fName": "qwe",
+      "lName": "asd",
+      "email": "bhattagarya123@php.com",
+      "gender": "Male",
+      "password": "asfd",
+      "mobileNumber": "3698521470",
+      "id": 7
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ]
+}

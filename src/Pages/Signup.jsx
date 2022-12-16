@@ -1,13 +1,10 @@
 import { Box, Flex } from "@chakra-ui/react";
-import Navbar from "../Components/Navbar";
 import ServiceCarousel from "../Components/ServiceCarousel";
 import SignupForm from "../Components/SignupForm";
 
 function Signup() {
   return (
     <Box>
-      <Navbar />
-
       <Flex
         flexDir={{ base: "column-reverse", md: "row" }}
         maxW={{ base: "99%", md: "80%" }}

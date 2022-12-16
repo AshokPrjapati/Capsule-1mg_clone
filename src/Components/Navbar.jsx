@@ -14,13 +14,21 @@ import {
   useDisclosure,
   Heading,
   Divider,
+  MenuList,
+  Center,
+  Avatar,
+  MenuDivider,
+  MenuItem,
+  Menu,
+  MenuButton,
 } from "@chakra-ui/react";
 
 import { FaShoppingCart } from "react-icons/fa";
 
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
-// import { useContext } from "react";
-// import { AuthContext } from "../Contexts/AuthContext";
+import { AuthContext } from "../Contexts/AuthContext";
+import { useContext } from "react";
+import UserCard from "./UserCard";
 
 const NAV_ITEMS = [
   {
@@ -62,6 +70,7 @@ const AUTH_ITEMS = [
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+  const { isReg } = useContext(AuthContext);
 
   return (
     <Box>
@@ -89,7 +98,7 @@ export default function WithSubnavigation() {
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Heading align={"left"} color="#000" fontSize="25px">
-            Capsule
+            <Link href="/">Capsule</Link>
           </Heading>
 
           <Flex
@@ -100,36 +109,39 @@ export default function WithSubnavigation() {
             <DesktopNav />
           </Flex>
         </Flex>
-
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
-          spacing={2}
-          display={{ base: "none", md: "none", lg: "flex" }}
-        >
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"/login"}
-            borderRight={"1px solid"}
-            borderRadius="none"
-            pr={"10px"}
+        {isReg ? (
+          <UserCard />
+        ) : (
+          <Stack
+            flex={{ base: 1, md: 0 }}
+            justify={"flex-end"}
+            direction={"row"}
+            spacing={2}
+            display={{ base: "none", md: "none", lg: "flex" }}
           >
-            Login
-          </Button>
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"/signup"}
-          >
-            Sign Up
-          </Button>
-        </Stack>
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              href={"/login"}
+              borderRight={"1px solid"}
+              borderRadius="none"
+              pr={"10px"}
+            >
+              Login
+            </Button>
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              href={"/signup"}
+            >
+              Sign Up
+            </Button>
+          </Stack>
+        )}
 
         <Flex justify="space-around" m={"0 20px"} gap={"20px"} align="center">
           <Text

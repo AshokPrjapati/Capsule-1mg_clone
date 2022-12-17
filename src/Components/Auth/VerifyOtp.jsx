@@ -13,8 +13,8 @@ import {
   ModalFooter,
 } from "@chakra-ui/react";
 import { PinInput, PinInputField } from "@chakra-ui/react";
-import ShowAlert from "./ShowAlert";
-import { AuthContext } from "../Contexts/AuthContext";
+import ShowAlert from "../Utils/ShowAlert";
+import { AuthContext } from "../../Contexts/AuthContext";
 
 export default function VerifyOtp({ mobileNumber, isOpen, onClose }) {
   const [otp, setOtp] = useState("");

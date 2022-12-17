@@ -1,7 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react";
 
-import ServiceCarousel from "../Components/ServiceCarousel";
-import LoginForm from "../Components/LoginForm";
+import ServiceCarousel from "../Components/Utils/ServiceCarousel";
+import LoginForm from "../Components/Auth/LoginForm";
 
 function Login() {
   return (

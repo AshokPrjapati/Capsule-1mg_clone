@@ -14,21 +14,15 @@ import {
   useDisclosure,
   Heading,
   Divider,
-  MenuList,
-  Center,
   Avatar,
-  MenuDivider,
-  MenuItem,
-  Menu,
-  MenuButton,
 } from "@chakra-ui/react";
 
 import { FaShoppingCart } from "react-icons/fa";
 
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
-import { AuthContext } from "../Contexts/AuthContext";
+import { AuthContext } from "../../Contexts/AuthContext";
 import { useContext } from "react";
-import UserCard from "./UserCard";
+import UserCard from "../Auth/UserCard";
 
 const NAV_ITEMS = [
   {
@@ -69,8 +63,8 @@ const AUTH_ITEMS = [
 ];
 
 export default function WithSubnavigation() {
-  const { isOpen, onToggle } = useDisclosure();
   const { isReg } = useContext(AuthContext);
+  const { isOpen, onToggle } = useDisclosure();
 
   return (
     <Box>
@@ -204,17 +198,60 @@ const DesktopNav = () => {
 };
 
 const MobileNav = () => {
+  const { isReg, userData, handleIsReg, handleUser } = useContext(AuthContext);
   return (
     <Stack
       bg={useColorModeValue("white", "gray.800")}
       p={4}
       display={{ md: "none" }}
     >
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
+      {isReg ? (
+        <Flex
+          rounded={"full"}
+          variant={"link"}
+          cursor={"pointer"}
+          minW={0}
+          justify="space-between"
+          align={"center"}
+        >
+          <Flex
+            align={"center"}
+            gap="5px"
+            as={Button}
+            bg={"none"}
+            _hover={{ bg: "none" }}
+          >
+            <Avatar
+              size={"sm"}
+              src={"https://avatars.dicebear.com/api/male/username.svg"}
+            />
+            <Text
+              textDecor={"none"}
+              fontWeight={600}
+              fontSize="18px"
+              color={"#000"}
+            >
+              {userData.fName}
+            </Text>
+          </Flex>
+          <Button
+            size={"sm"}
+            onClick={() => {
+              handleIsReg(false);
+              handleUser({});
+            }}
+          >
+            LogOut
+          </Button>
+        </Flex>
+      ) : (
+        AUTH_ITEMS.map((navItem) => (
+          <MobileNavItem key={navItem.label} {...navItem} />
+        ))
+      )}
+
       <Divider />
-      {AUTH_ITEMS.map((navItem) => (
+      {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
     </Stack>

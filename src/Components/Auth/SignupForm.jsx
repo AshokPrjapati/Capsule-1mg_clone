@@ -2,7 +2,7 @@ import { Link, Text, Stack, Heading } from "@chakra-ui/react";
 import { useContext, useState } from "react";
 
 import { MobileAuthForm, UserAuthForm } from "./Form";
-import { AuthContext } from "../Contexts/AuthContext";
+import { AuthContext } from "../../Contexts/AuthContext";
 
 function SignupForm() {
   const [mobileNumber, setMobileNumber] = useState("");

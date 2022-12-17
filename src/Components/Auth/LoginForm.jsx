@@ -13,10 +13,10 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { useContext, useState } from "react";
-import { fetchUser } from "./API";
+import { fetchUser } from "../API";
 
-import { AuthContext } from "../Contexts/AuthContext";
-import SucessAlert from "./SucessAlert";
+import { AuthContext } from "../../Contexts/AuthContext";
+import SucessAlert from "../Utils/SucessAlert";
 
 function LoginForm() {
   const { handleIsReg, handleUser } = useContext(AuthContext);
@@ -53,11 +53,12 @@ function LoginForm() {
             user.password === loginData.password
           ) {
             flag = 1;
-            onOpen();
+
             setLoginData({ email: "", password: "" });
             handleIsReg(true);
             handleUser({ ...user });
             setLoading(false);
+            onOpen();
             break;
           }
         }

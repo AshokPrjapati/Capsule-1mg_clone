@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { postUserData } from "./API";
+import { postUserData } from "../API";
 import {
   Input,
   InputGroup,
@@ -19,11 +19,11 @@ import {
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
 import VerifyOtp from "./VerifyOtp";
-import ShowAlert from "./ShowAlert";
-import SucessAlert from "./SucessAlert";
+import ShowAlert from "../Utils/ShowAlert";
+import SucessAlert from "../Utils/SucessAlert";
 import { Link } from "react-router-dom";
 
-import { AuthContext } from "../Contexts/AuthContext";
+import { AuthContext } from "../../Contexts/AuthContext";
 
 function MobileAuthForm({ handleNumber, mobileNumber }) {
   const { isOpen, onOpen, onClose } = useDisclosure();

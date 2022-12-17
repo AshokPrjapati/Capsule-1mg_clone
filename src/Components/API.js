@@ -1,8 +1,8 @@
 import axios from "axios";
-//`https://capsule-web-server.onrender.com/users`
+//https://capsule-web-server.onrender.com/users
 
 export const postUserData = (userData) => {
-    return axios.post(`http://localhost:8080/users`, {
+    return axios.post(`https://capsule-web-server.onrender.com/users`, {
         ...userData,
     });
 };

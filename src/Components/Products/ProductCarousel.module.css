@@ -1,0 +1,27 @@
+.carousel {
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+.span {
+    color: green;
+}
+
+
+.text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.text1 {
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+}

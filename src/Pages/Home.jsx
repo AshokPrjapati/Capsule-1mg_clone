@@ -10,7 +10,10 @@ function Home() {
       <SearchNav />
       <Category />
       <Carousel />
-      <ProductCarousel />
+      <ProductCarousel category={"vitamins-suppliments"} />
+      <ProductCarousel category={"combo"} />
+      <ProductCarousel category={"medicine"} />
+      <ProductCarousel category={"disease"} />
     </>
   );
 }

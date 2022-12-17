@@ -1,16 +1,16 @@
 import React from "react";
-import MainCarousel from "../Components/Carousel";
-import Category from "../Components/Category";
-import Navbar from "../Components/Navbar";
-import SearchNav from "../Components/SearchNav";
+import Carousel from "../Components/Carousel";
+import Category from "../Components/Navbar/Category";
+import ProductCarousel from "../Components/Products/ProductCarousel";
+import SearchNav from "../Components/Navbar/SearchNav";
 
 function Home() {
   return (
     <>
-      <Navbar />
       <SearchNav />
       <Category />
-      <MainCarousel />
+      <Carousel />
+      <ProductCarousel />
     </>
   );
 }

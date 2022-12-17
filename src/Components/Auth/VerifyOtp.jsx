@@ -1,5 +1,5 @@
 import { Center, Heading, useDisclosure, VStack } from "@chakra-ui/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   Button,
   FormControl,
@@ -13,11 +13,12 @@ import {
   ModalFooter,
 } from "@chakra-ui/react";
 import { PinInput, PinInputField } from "@chakra-ui/react";
-import ShowAlert from "./ShowAlert";
+import ShowAlert from "../Utils/ShowAlert";
+import { AuthContext } from "../../Contexts/AuthContext";
 
 export default function VerifyOtp({ mobileNumber, isOpen, onClose }) {
   const [otp, setOtp] = useState("");
-  const [mobAut, setMobAuth] = useState(false);
+  const { setMobileNumberAuth } = useContext(AuthContext);
 
   const {
     isOpen: isOpenAlert,
@@ -28,8 +29,12 @@ export default function VerifyOtp({ mobileNumber, isOpen, onClose }) {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent>
-        <Flex justify={"center"} bg={useColorModeValue("gray.50", "gray.800")}>
+      <ModalContent w={{ base: "90%", md: "full" }}>
+        <Flex
+          justify={"center"}
+          bg={useColorModeValue("gray.50", "gray.800")}
+          borderRadius="10px"
+        >
           <Stack
             spacing={4}
             w={"full"}
@@ -84,8 +89,8 @@ export default function VerifyOtp({ mobileNumber, isOpen, onClose }) {
                 }}
                 onClick={() => {
                   if (otp === "1234") {
-                    onCloseAlert();
-                    setMobAuth(true);
+                    onClose();
+                    setMobileNumberAuth(true);
                   } else onOpenAlert();
                 }}
               >

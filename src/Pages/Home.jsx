@@ -7,8 +7,6 @@ import SearchNav from "../Components/Navbar/SearchNav";
 function Home() {
   return (
     <>
-      <SearchNav />
-      <Category />
       <Carousel />
       <ProductCarousel category={"vitamins-suppliments"} />
       <ProductCarousel category={"combo"} />

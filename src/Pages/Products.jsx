@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Divider,
   Flex,
   Grid,
@@ -11,16 +12,21 @@ import {
   Text,
 } from "@chakra-ui/react";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Pagination from "../Components/Products/Pagination";
+import { CartContext } from "../Contexts/CartContext";
 
 import styles from "../Components/Products/ProductCarousel.module.css";
+import ProductCard from "../Components/Products/ProductCard";
+import { Link } from "react-router-dom";
 
 function Products() {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(12);
   const [sort, setSort] = useState("");
+
+  const { handleCartCount, handleCartProduct } = useContext(CartContext);
   //&_sort=${param}&_order=${order}&rating_gte=${gte}&rating_lte=${lte}`
 
   let limit = 12;
@@ -50,8 +56,16 @@ function Products() {
     console.log(val);
   };
 
+  const handleAdd = (e, i, p) => {
+    handleCartCount(1);
+    const btn = document.getElementById("btn" + i);
+    btn.disabled = true;
+    e.target.childNodes[0].data = "Added";
+    handleCartProduct({ p });
+  };
+
   return (
-    <Flex gap={4} mt="40px">
+    <Flex gap={4} pt="40px" bg={"#f6f6f6"}>
       <Box
         w={"20%"}
         flexShrink={0}
@@ -61,6 +75,7 @@ function Products() {
         maxH={"100vh"}
         textAlign="left"
         className={styles.shadow}
+        bg="#fff"
       >
         <Stack gap={2}>
           {/* <Heading fontSize={"20px"}>Category</Heading>
@@ -81,7 +96,11 @@ function Products() {
           </Select>
           <Divider />
           <Heading fontSize={"20px"}>Rating</Heading>
-          <Select>
+          <Select
+            onChange={(e) =>
+              handleSort(`_sort=rating&_order=${e.target.value}`)
+            }
+          >
             <option value="">Select</option>
             <option value="asc">Rating: Low to High</option>
             <option value="desc">Rating: High to Low</option>
@@ -100,66 +119,12 @@ function Products() {
       <Box width={"72%"} m={"auto"}>
         <Grid templateColumns={"repeat(4, 1fr)"} gap="20px 20px" p={3}>
           {data.map((p) => (
-            <GridItem
-              key={p.title}
-              w="100%"
-              cursor={"pointer"}
-              className={styles.shadow}
-              padding={4}
-              textAlign="left"
-            >
-              <Box maxW={"100%"} h={"150px"} mb={"10px"} align={"center"}>
-                <Image h="100%" src={p.src} />
-              </Box>
-              <Text
-                className={styles.text}
-                color="grey"
-                fontSize={"15px"}
-                mb={"10px"}
-                fontWeight={600}
-              >
-                {p.title}
-              </Text>
-              <Text
-                className={styles.text1}
-                color="grey"
-                fontSize={"13px"}
-                mb={"10px"}
-                fontWeight={600}
-              >
-                {p.packsize}
-              </Text>
-              <Flex gap={"10px"}>
-                <Text
-                  className={styles.text}
-                  color="grey"
-                  fontSize={"13px"}
-                  mb={"10px"}
-                  textDecor="line-through"
-                  fontWeight={600}
-                >
-                  {p["strike-price"]}{" "}
-                </Text>
-                <Text
-                  className={styles.text}
-                  fontSize={"13px"}
-                  mb={"10px"}
-                  color="green"
-                  fontWeight={600}
-                >
-                  {p["discount-percent"]}
-                </Text>
-              </Flex>
-              <Heading
-                className={styles.text}
-                color="grey"
-                fontSize={"15px"}
-                mb={"10px"}
-                fontWeight={600}
-              >
-                {p.price}
-              </Heading>
-            </GridItem>
+            <ProductCard
+              key={p.id}
+              id={p.id}
+              p={{ ...p }}
+              handleAdd={handleAdd}
+            />
           ))}
         </Grid>
         <Pagination

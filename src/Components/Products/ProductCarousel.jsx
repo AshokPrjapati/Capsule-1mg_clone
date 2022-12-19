@@ -39,7 +39,7 @@ function ProductCarousel({ category }) {
         </Text>
         <Spacer />
         <Button size={"sm"} bg="#ff6f61" _hover={{ bg: "#ff4f61" }} mr={"20px"}>
-          <Link to={`products/${category}`}>See All</Link>
+          <Link to={`category/${category}`}>See All</Link>
         </Button>
       </Flex>
       <Box position="relative" overflow={"hidden"} shadow={"lg"}>

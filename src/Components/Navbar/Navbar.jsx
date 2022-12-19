@@ -34,8 +34,8 @@ const NAV_ITEMS = [
     href: "#",
   },
   {
-    label: "CONSULTS DOCTORS",
-    href: "#",
+    label: "ALL PRODUCTS",
+    href: "/products",
   },
   {
     label: "COVID-19",

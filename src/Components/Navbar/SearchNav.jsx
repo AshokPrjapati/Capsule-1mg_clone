@@ -14,7 +14,7 @@ import { FaSearch, FaSearchLocation } from "react-icons/fa";
 
 function SearchNav() {
   return (
-    <Box fontFamily={"Clear-Sans"} shadow={"sm"}>
+    <Box fontFamily={"Clear-Sans"} shadow={"sm"} bg="#fff">
       <Flex justify={"space-around"} minH={"40px"} py="10px" align={"center"}>
         <Flex
           gap={2}

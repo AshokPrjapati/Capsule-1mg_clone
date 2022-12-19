@@ -2,6 +2,7 @@ import { Flex, Spacer, Stack, Text, Button, Box } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import CarouselCard from "./CarouselCard";
 
 function ProductCarousel({ category }) {
@@ -38,7 +39,7 @@ function ProductCarousel({ category }) {
         </Text>
         <Spacer />
         <Button size={"sm"} bg="#ff6f61" _hover={{ bg: "#ff4f61" }} mr={"20px"}>
-          See All
+          <Link to={`products/${category}`}>See All</Link>
         </Button>
       </Flex>
       <Box position="relative" overflow={"hidden"} shadow={"lg"}>
@@ -81,7 +82,7 @@ function ProductCarousel({ category }) {
           // h="350px"
         >
           {data.map((p) => (
-            <CarouselCard p={{ ...p }} />
+            <CarouselCard key={p.title} p={{ ...p }} />
           ))}
         </Flex>
       </Box>

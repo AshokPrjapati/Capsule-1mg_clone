@@ -1,8 +1,8 @@
 {
   "users": [
     {
-      "fName": "Ashok",
-      "lName": "Kumar",
+      "ftitle": "Ashok",
+      "ltitle": "Kumar",
       "email": "ap271449@gmail.com",
       "gender": "Male",
       "password": "1234",
@@ -10,138 +10,522 @@
       "id": 1
     }
   ],
+  "products": [
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/0fa72f2c-072d-4c6a-bc52-446edab403a4/tata-1mg-salmon-omega-3-fish-oil-capsule.jpeg",
+      "title": "Tata 1mg Salmon Omega 3 Fish Oil Capsule",
+      "packsize": "bottle of 60 capsules",
+      "rating": "4.4",
+      "CardRatingDetail": "1506 ratings",
+      "discount-price": "995",
+      "off-badge": "47% off",
+      "price": 524
+    },
+
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/gc3u9gfc331wtsipnljl/tata-1mg-calcium-vitamin-d3-zinc-magnesium-and-alfalfa-tablet-joint-support-bones-health-immunity-energy-support.jpg",
+      "title": "Tata 1mg Calcium + Vitamin D3, Zinc, Magnesium and Alfalfa Tablet, Joint Support, Bones Health, Immunity & Energy Support",
+      "packsize": "bottle of 60 tablets",
+      "rating": "4.3",
+      "CardRatingDetail": "2418 ratings",
+      "discount-price": "595",
+      "off-badge": "53% off",
+      "price": 277
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/gggpxmbrgyv0uqhzwyy8/tata-1mg-lumbar-sacral-belt-for-lower-back-support-universal.jpg",
+      "title": "Tata 1mg Lumbar Sacral Belt for Lower Back Support Universal",
+      "packsize": "box of 1 Unit",
+      "rating": "4.2",
+      "CardRatingDetail": "94 ratings",
+      "discount-price": "800",
+      "off-badge": "43% off",
+      "price": 451
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/gmkrpf1imjj9djwvq4gq/tata-1mg-multivitamin-supreme-zinc-calcium-and-vitamin-d-capsule-for-immunity-energy-overall-health.jpg",
+      "title": "Tata 1mg Multivitamin Supreme, Zinc, Calcium and Vitamin D Capsule for Immunity, Energy, Overall Health",
+      "packsize": "bottle of 60 capsules",
+      "rating": "4.2",
+      "CardRatingDetail": "1243 ratings",
+      "discount-price": "995",
+      "off-badge": "57% off",
+      "price": 422
+    },
+
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/59d4bf61-6252-419d-80f7-340459744690/i-know-ovulation-strip-kit.jpeg",
+      "title": "i-Know Ovulation Strip Kit",
+      "packsize": "packet of 5 Test Kits",
+      "rating": "3.7",
+      "CardRatingDetail": "339 ratings",
+      "discount-price": "549",
+      "off-badge": "14% off",
+      "price": 472
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/078eadc81a60489bb211ca51ed75c921/tata-1mg-bis-approved-ffp2-n95-mask-for-kids-5-mask.jpg",
+      "title": "Tata 1mg BIS Approved FFP2 N95 Mask for Kids 5 Mask",
+      "packsize": "box of 5 masks",
+      "rating": "4.2",
+      "CardRatingDetail": "101 ratings",
+      "discount-price": "400",
+      "off-badge": "40% off",
+      "price": 240
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/kqupivjrbrq0ctcywfcs/nicotex-sugar-free-mint-plus-chewing-gums.jpg",
+      "title": "Nicotex Sugar Free Mint Plus Chewing Gums",
+      "packsize": "Tin of 25 chewing gums",
+      "rating": "4.1",
+      "CardRatingDetail": "275 ratings",
+      "discount-price": "245",
+      "off-badge": "16% off",
+      "price": 206
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/sebt72otrs6a2gnqfpcb/protinex-health-and-nutritional-drink-tasty-chocolate.jpg",
+      "title": "Protinex Health and Nutritional Drink Tasty Chocolate",
+      "packsize": "Tin of 250 gm Powder",
+      "rating": "4.4",
+      "CardRatingDetail": "1070 ratings",
+      "discount-price": "",
+      "off-badge": "",
+      "price": 415
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/c8be7d3b06ef4cd28507bfa8fcdf600e/bioderma-sebium-hydra-moisturiser.jpg",
+      "title": "Bioderma Sebium Hydra Moisturiser",
+      "packsize": "bottle of 40 ml Moisturiser",
+      "rating": "4.4",
+      "CardRatingDetail": "34 ratings",
+      "discount-price": "",
+      "off-badge": "",
+      "price": 1190
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/ymwkgontlwx0fkulrinw/muscleblaze-whey-gold-whey-protein-isolate-only-powder-rich-milk-chocolate.jpg",
+      "title": "MuscleBlaze Whey Gold Whey Protein Isolate Only Powder Rich Milk Chocolate",
+      "packsize": "box of 4.4 lb Powder",
+      "rating": "",
+      "CardRatingDetail": "",
+      "discount-price": "8669",
+      "off-badge": "29% off",
+      "price": 6098
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/cropped/jczeebil5hqmqtawsl13/swadeshi-giloy-vati-tablet.jpg",
+      "title": "Swadeshi Giloy Vati (Tablet)",
+      "packsize": "bottle of 120 tablets",
+      "rating": "4.1",
+      "CardRatingDetail": "304 ratings",
+      "discount-price": "200",
+      "off-badge": "21% off",
+      "price": 158
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/cxy73xcilxrlms7wycwi/nicotex-14mg-patch.jpg",
+      "title": "Nicotex 14mg Patch",
+      "packsize": "packet of 7 transdermal patches",
+      "rating": "4",
+      "CardRatingDetail": "98 ratings",
+      "discount-price": "699",
+      "off-badge": "6% off",
+      "price": 657
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/874c24e9de5d483fbaec1848ed294d5d/tata-1mg-multivitamin-multimineral-supplement-tablet.jpg",
+      "title": "Tata 1mg Multivitamin & Multimineral Supplement Tablet",
+      "packsize": "bottle of 15 tablets",
+      "rating": "4.3",
+      "CardRatingDetail": "302 ratings",
+      "discount-price": "99",
+      "off-badge": "14% off",
+      "price": 85
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/7694941298144f4ca65abcdf8251e0e7/bioderma-sebium-moussant-purifying-cleansing-foaming-gel.jpg",
+      "title": "Bioderma Sebium Moussant Purifying Cleansing Foaming Gel",
+      "packsize": "tube of 200 ml Gel",
+      "rating": "4.4",
+      "CardRatingDetail": "64 ratings",
+      "discount-price": "",
+      "off-badge": "",
+      "price": 159
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/cropped/epdft2hdjosihgy3onxj/as-it-is-nutrition-whey-protein-concentrate.jpg",
+      "title": "AS-IT-IS Nutrition Whey Protein Concentrate",
+      "packsize": "packet of 1000 gm Powder",
+      "rating": "4",
+      "CardRatingDetail": "453 ratings",
+      "discount-price": "2599",
+      "off-badge": "30% off",
+      "price": 179
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/kyaakhdi6eokjptpe24k/nicotex-21mg-patch.jpg",
+      "title": "Nicotex 21mg Patch",
+      "packsize": "packet of 7 transdermal patches",
+      "rating": "3.8",
+      "CardRatingDetail": "62 ratings",
+      "discount-price": "825",
+      "off-badge": "6% off",
+      "price": 775
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/jmgnubbowtvtsodfj2rk/naselin-saline-spray.jpg",
+      "title": "Naselin Saline Spray",
+      "packsize": "bottle of 20 ml Nasal Spray",
+      "rating": "4.3",
+      "CardRatingDetail": "47 ratings",
+      "discount-price": "46",
+      "off-badge": "8% off",
+      "price": 423
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/cczrit2fih8ydtv6zfam/naselin-nasal-spray.jpg",
+      "title": "Naselin Nasal Spray",
+      "packsize": "bottle of 10 ml Nasal Spray",
+      "rating": "4.4",
+      "CardRatingDetail": "55 ratings",
+      "discount-price": "84",
+      "off-badge": "19% off",
+      "price": 686
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/i5kbl7bek1cueqvvcfqu/mamaearth-onion-shampoo.jpg",
+      "title": "Mamaearth Onion Shampoo",
+      "packsize": "pump bottle of 250 ml Shampoo",
+      "rating": "4.2",
+      "CardRatingDetail": "494 ratings",
+      "discount-price": "349",
+      "off-badge": "12% off",
+      "price": 307
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/cropped/p2sgsoxnec3ibe2yzwjf/swadeshi-special-chyawanprash.jpg",
+      "title": "Swadeshi Special Chyawanprash",
+      "packsize": "jar of 1 kg Paste",
+      "rating": "4",
+      "CardRatingDetail": "191 ratings",
+      "discount-price": "",
+      "off-badge": "",
+      "price": 330
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/myadq5zcwsrzepyibkc5/protinex-original-health-and-nutritional-drink.jpg",
+      "title": "Protinex Original Health and Nutritional Drink",
+      "packsize": "Tin of 400 gm Powder",
+      "rating": "4.4",
+      "CardRatingDetail": "914 ratings",
+      "discount-price": "",
+      "off-badge": "",
+      "price": 675
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/cropped/zkqkbpk4bvosch7nt5m0/vlcc-matte-look-spf-30-sun-screen-gel-creme.jpg",
+      "title": "VLCC Matte Look SPF 30 Sun Screen Gel Creme",
+      "packsize": "tube of 100 gm Cream",
+      "rating": "4.1",
+      "CardRatingDetail": "16 ratings",
+      "discount-price": "345",
+      "off-badge": "14% off",
+      "price": 296
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/cropped/ayrwi7srzltfvcpgaptt/as-it-is-nutrition-whey-protein-isolate.jpg",
+      "title": "AS-IT-IS Nutrition Whey Protein Isolate",
+      "packsize": "packet of 1000 gm Powder",
+      "rating": "3.9",
+      "CardRatingDetail": "165 ratings",
+      "discount-price": "3699",
+      "off-badge": "29% off",
+      "price": 2595
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/db9a90fd3bb5459d9efe749546a91c7a/accu-chek-active-test-strip-only-strips.jpg",
+      "title": "Accu-Chek Active Test Strip (Only Strips)",
+      "packsize": "box of 100 Test Strips",
+      "rating": "4.3",
+      "CardRatingDetail": "5783 ratings",
+      "discount-price": "1849",
+      "off-badge": "6% off",
+      "price": 1736
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/i2zwap2wiqhh766i5y78/dabur-amla-hair-oil.jpg",
+      "title": "Dabur Amla Hair Oil",
+      "packsize": "bottle of 450 ml Oil",
+      "rating": "4.4",
+      "CardRatingDetail": "895 ratings",
+      "discount-price": "215",
+      "off-badge": "9% off",
+      "price": 194
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/d71824667b96449b91be8b6a597cc2df/tata-1mg-calcium-vitamin-d-supplement-tablet.jpg",
+      "title": "Tata 1mg Calcium & Vitamin D Supplement Tablet",
+      "packsize": "bottle of 15 tablets",
+      "rating": "4.4",
+      "CardRatingDetail": "226 ratings",
+      "discount-price": "99",
+      "off-badge": "18% off",
+      "price": 818
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/mrx1uoqqizxrg0cx7ghc/mamaearth-onion-hair-mask.jpg",
+      "title": "Mamaearth Onion Hair Mask",
+      "packsize": "jar of 200 ml Hair Mask",
+      "rating": "4.2",
+      "CardRatingDetail": "114 ratings",
+      "discount-price": "599",
+      "off-badge": "10% off",
+      "price": 540
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/qcxi44kgygxzimnl33as/muscleblaze-mb-mass-gainer-xxl-chocolate.jpg",
+      "title": "MuscleBlaze MB Mass Gainer XXL Chocolate",
+      "packsize": "packet of 2.2 lb Powder",
+      "rating": "4.3",
+      "CardRatingDetail": "64 ratings",
+      "discount-price": "1729",
+      "off-badge": "38% off",
+      "price": 1069
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/cropped/dbibdnjq9klm5rvyvyfh/swadeshi-giloy-ras-juice.jpg",
+      "title": "Swadeshi Giloy Ras Juice",
+      "packsize": "bottle of 500 ml Juice",
+      "rating": "4.4",
+      "CardRatingDetail": "124 ratings",
+      "discount-price": "195",
+      "off-badge": "35% off",
+      "price": 126
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/jatnhwocm8v2ub0zaglm/protinex-original-health-and-nutritional-drink.jpg",
+      "title": "Protinex Original Health and Nutritional Drink",
+      "packsize": "Tin of 250 gm Powder",
+      "rating": "4.4",
+      "CardRatingDetail": "914 ratings",
+      "discount-price": "",
+      "off-badge": "",
+      "price": 460
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/cropped/s2u4v6010h2yzytghaiq/as-it-is-nutrition-creatine-monohydrate.jpg",
+      "title": "AS-IT-IS Nutrition Creatine Monohydrate",
+      "packsize": "packet of 250 gm Powder",
+      "rating": "4.1",
+      "CardRatingDetail": "41 ratings",
+      "discount-price": "1322",
+      "off-badge": "27% off",
+      "price": 966
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/zbgqietrhnumgfp84vlt/accu-chek-instant-test-strip-only-strip.jpg",
+      "title": "Accu-Chek Instant Test Strip ( Only Strip)",
+      "packsize": "box of 50 Test Strips",
+      "rating": "4.3",
+      "CardRatingDetail": "2279 ratings",
+      "discount-price": "1049",
+      "off-badge": "6% off",
+      "price": 980
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/fmea8w5utxreguzvrgmy/dabur-shilajit-gold-capsule.jpg",
+      "title": "Dabur Shilajit Gold Capsule",
+      "packsize": "bottle of 20 capsules",
+      "rating": "3.9",
+      "CardRatingDetail": "1810 ratings",
+      "discount-price": "475",
+      "off-badge": "22% off",
+      "price": 370
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/cropped/ubgtztgs4xp2xakp9muz/himalaya-gentle-baby-soap-75gm-buy-3-get-1-free.jpg",
+      "title": "Himalaya Gentle Baby Soap 75gm (Buy 3 Get 1 Free)",
+      "packsize": "box of 4 soaps",
+      "rating": "4.5",
+      "CardRatingDetail": "432 ratings",
+      "discount-price": "165",
+      "off-badge": "12% off",
+      "price": 144
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/cropped/ugjgxvpb3rijvtrhfxig/mamaearth-tea-tree-face-wash.jpg",
+      "title": "Mamaearth Tea Tree Face Wash",
+      "packsize": "tube of 100 ml Face Wash",
+      "rating": "4.2",
+      "CardRatingDetail": "769 ratings",
+      "discount-price": "259",
+      "off-badge": "12% off",
+      "price": 228
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/uwimvlsrkb3z0esxy2qr/muscleblaze-fish-oil-1000mg-soft-gelatin-capsule.jpg",
+      "title": "MuscleBlaze Fish Oil 1000mg Soft Gelatin Capsule",
+      "packsize": "bottle of 180 soft gelatin capsules",
+      "rating": "4.4",
+      "CardRatingDetail": "88 ratings",
+      "discount-price": "1429",
+      "off-badge": "30% off",
+      "price": 999
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/rnvl3l0jtnc5ys5dwvts/muscleblaze-mb-whey-protein-rich-milk-chocolate.jpg",
+      "title": "MuscleBlaze MB Whey Protein Rich Milk Chocolate",
+      "packsize": "jar of 4.4 lb Powder",
+      "rating": "",
+      "CardRatingDetail": "",
+      "discount-price": "6669",
+      "off-badge": "23% off",
+      "price": 5098
+    },
+    {
+      "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/fgw47znpfv2czxnnnxsi/swadeshi-tulsi-drop.jpg",
+      "title": "Swadeshi Tulsi Drop",
+      "packsize": "bottle of 15 ml Drop",
+      "rating": "4.2",
+      "CardRatingDetail": "173 ratings",
+      "discount-price": "",
+      "off-badge": "",
+      "price": 110
+    }
+  ],
   "vitamins-suppliments": [
     {
       "href": "https://www.1mg.com/otc/tata-1mg-women-s-multivitamin-veg-tablet-with-zinc-vitamin-c-calcium-vitamin-d-and-iron-support-immunity-bones-overall-health-otc555721",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/qh1au45w8u7cfvf3lg3i.jpg",
-      "name": "Tata 1mg Women's Multivitamin Veg Tablet with Zinc, Vitamin C, Calcium, Vitamin D and Iron, Support Immunity, Bones & Overall Health",
+      "title": "Tata 1mg Women's Multivitamin Veg Tablet with Zinc, Vitamin C, Calcium, Vitamin D and Iron, Support Immunity, Bones & Overall Health",
       "packsize": "bottle of 60 tablets",
-      "strike-price": "₹995",
+      "strike-price": "995",
       "discount-percent": "56% off",
-      "price": "₹433",
+      "price": 436,
       "category": "Vitamins & Suppliments"
     },
     {
       "href": "https://www.1mg.com/otc/tata-1mg-calcium-vitamin-d3-zinc-magnesium-and-alfalfa-tablet-joint-support-bones-health-immunity-energy-support-otc536094",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/gc3u9gfc331wtsipnljl.jpg",
-      "name": "Tata 1mg Calcium + Vitamin D3, Zinc, Magnesium and Alfalfa Tablet, Joint Support, Bones Health, Immunity & Energy Support",
+      "title": "Tata 1mg Calcium + Vitamin D3, Zinc, Magnesium and Alfalfa Tablet, Joint Support, Bones Health, Immunity & Energy Support",
       "packsize": "bottle of 60 tablets",
-      "strike-price": "₹595",
+      "strike-price": "595",
       "discount-percent": "53% off",
-      "price": "₹278",
+      "price": 276,
       "category": "Vitamins & Suppliments"
     },
     {
       "href": "https://www.1mg.com/otc/ostocalcium-plus-chewable-tablet-otc482286",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/309e3678e3ca467581143b7a47595d4c.jpg",
-      "name": "Ostocalcium Plus Chewable Tablet",
+      "title": "Ostocalcium Plus Chewable Tablet",
       "packsize": "bottle of 30 Chewable Tablets",
-      "strike-price": "₹196.84",
+      "strike-price": "196.84",
       "discount-percent": "10% off",
-      "price": "₹176",
+      "price": 179,
       "category": "Vitamins & Suppliments"
     },
     {
       "href": "https://www.1mg.com/otc/cipcal-500-tablet-otc159603",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/ltcu9fw66h1deqlcbu9x.jpg",
-      "name": "Cipcal 500 Tablet",
+      "title": "Cipcal 500 Tablet",
       "packsize": "strip of 15 tablets",
-      "strike-price": "₹86.5",
+      "strike-price": "86.5",
       "discount-percent": "44% off",
-      "price": "₹48",
+      "price": 488,
       "category": "Vitamins & Suppliments"
     },
     {
       "href": "https://www.1mg.com/otc/carbamide-forte-calcium-tablet-otc680652",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/a871807dafe9483084c5a780191dd090.jpg",
-      "name": "Carbamide Forte Calcium Tablet",
+      "title": "Carbamide Forte Calcium Tablet",
       "packsize": "box of 120 tablets",
-      "strike-price": "₹695",
+      "strike-price": "695",
       "discount-percent": "21% off",
-      "price": "₹549",
+      "price": 542,
       "category": "Vitamins & Suppliments"
     },
     {
       "href": "https://www.1mg.com/otc/calcimax-forte-tablet-otc114769",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/zowp8fepfoeqfplpj7oy.jpg",
-      "name": "Calcimax Forte+ Tablet",
+      "title": "Calcimax Forte+ Tablet",
       "packsize": "strip of 30 tablets",
-      "strike-price": "₹285",
+      "strike-price": "285",
       "discount-percent": "10% off",
-      "price": "₹256",
+      "price": 256,
       "category": "Vitamins & Suppliments"
     },
     {
       "href": "https://www.1mg.com/otc/inlife-calcium-vitamin-d3-tablet-otc344394",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/duapgnzx4k0iupahsy1t.jpg",
-      "name": "Inlife Calcium Vitamin D3 Tablet",
+      "title": "Inlife Calcium Vitamin D3 Tablet",
       "packsize": "bottle of 60 tablets",
-      "strike-price": "₹449",
+      "strike-price": "449",
       "discount-percent": "37% off",
-      "price": "₹283",
+      "price": 288,
       "category": "Vitamins & Suppliments"
     },
     {
       "href": "https://www.1mg.com/otc/tata-1mg-salmon-omega-3-fish-oil-capsule-otc503411",
-      "name": "Tata 1mg Salmon Omega 3 Fish Oil Capsule",
+      "title": "Tata 1mg Salmon Omega 3 Fish Oil Capsule",
       "packsize": "bottle of 60 capsules",
-      "strike-price": "₹995",
+      "strike-price": "995",
       "discount-percent": "47% off",
-      "price": "₹525",
+      "price": 528,
       "category": "Omega & fish oil"
     },
     {
       "href": "https://www.1mg.com/otc/dr.-morepen-omega-3-triple-strength-1250mg-deep-sea-fish-oil-with-dha-epa-900mg-softgel-otc659295",
-      "name": "Dr. Morepen Omega 3 Triple Strength 1250mg Deep Sea Fish Oil with DHA & EPA 900mg Softgel",
+      "title": "Dr. Morepen Omega 3 Triple Strength 1250mg Deep Sea Fish Oil with DHA & EPA 900mg Softgel",
       "packsize": "bottle of 60 soft gelatin capsules",
-      "strike-price": "₹1099",
+      "strike-price": "1099",
       "discount-percent": "40% off",
-      "price": "₹659",
+      "price": 659,
       "category": "Omega & fish oil"
     },
     {
       "href": "https://www.1mg.com/otc/seacod-cod-liver-oil-capsule-otc123631",
-      "name": "Seacod Cod Liver Oil Capsule",
+      "title": "Seacod Cod Liver Oil Capsule",
       "packsize": "bottle of 110 soft gelatin capsules",
-      "strike-price": "₹352.98",
+      "strike-price": "352.98",
       "discount-percent": "11% off",
-      "price": "₹313",
+      "price": 310,
       "category": "Omega & fish oil"
     },
     {
       "href": "https://www.1mg.com/otc/healthkart-hk-vitals-fish-oil-omega-3-fatty-acids-soft-gelatin-capsule-otc384834",
-      "name": "HealthKart HK Vitals Fish Oil Omega 3 Fatty Acids Soft Gelatin Capsule",
+      "title": "HealthKart HK Vitals Fish Oil Omega 3 Fatty Acids Soft Gelatin Capsule",
       "packsize": "bottle of 60 soft gelatin capsules",
-      "strike-price": "₹699",
+      "strike-price": "699",
       "discount-percent": "43% off",
-      "price": "₹399",
+      "price": 396,
       "category": "Omega & fish oil"
     },
     {
       "href": "https://www.1mg.com/otc/seven-seas-original-cod-liver-oil-capsule-otc350667",
-      "name": "Seven Seas Original Cod-Liver Oil Capsule",
+      "title": "Seven Seas Original Cod-Liver Oil Capsule",
       "packsize": "bottle of 500 soft gelatin capsules",
-      "strike-price": "₹1339.5",
+      "strike-price": "1339.5",
       "discount-percent": "4% off",
-      "price": "₹1282",
+      "price": 1224,
       "category": "Omega & fish oil"
     },
     {
       "href": "https://www.1mg.com/otc/carbamide-forte-triple-strength-fish-oil-1400mg-omega-3-900mg-softgel-capsule-otc608596",
-      "name": "Carbamide Forte Triple Strength Fish Oil 1400mg Omega 3, 900mg Softgel Capsule",
+      "title": "Carbamide Forte Triple Strength Fish Oil 1400mg Omega 3, 900mg Softgel Capsule",
       "packsize": "bottle of 90 soft gelatin capsules",
-      "strike-price": "₹1095",
+      "strike-price": "1095",
       "discount-percent": "36% off",
-      "price": "₹699",
+      "price": 696,
       "category": "Omega & fish oil"
     },
     {
       "href": "https://www.1mg.com/otc/gnc-triple-strength-fish-oil-softgel-otc370267",
-      "name": "GNC Triple Strength Fish Oil Softgel",
+      "title": "GNC Triple Strength Fish Oil Softgel",
       "packsize": "bottle of 60 soft gelatin capsules",
-      "strike-price": "₹1599",
+      "strike-price": "1599",
       "discount-percent": "37% off",
-      "price": "₹999",
+      "price": 996,
       "category": "Omega & fish oil"
     }
   ],
@@ -149,71 +533,71 @@
     {
       "href": "https://www.1mg.com/otc/tata-1mg-diabetes-care-combo-pack-for-cholesterol-blood-sugar-management-otc795842",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/38b86c6a33f744afac80ed36d4bb87ba.jpg",
-      "name": "Tata 1mg Diabetes Care Combo Pack for Cholesterol & Blood Sugar Management",
+      "title": "Tata 1mg Diabetes Care Combo Pack for Cholesterol & Blood Sugar Management",
       "packsize": "combo pack of 3 Packs",
-      "strike-price": "₹1085",
+      "strike-price": "1085",
       "discount-percent": "46% off",
-      "price": "₹580",
+      "price": 58,
       "category": "combo"
     },
     {
       "href": "https://www.1mg.com/otc/accu-chek-combo-pack-of-active-50-test-strip-2-pack-of-softclix-lancet-25-each-otc652631",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/c2sw0gi2dw4cwdf1ecjp.jpg",
-      "name": "Accu-Chek Combo Pack of Active 50 Test Strip & 2 Pack of Softclix Lancet (25 Each)",
+      "title": "Accu-Chek Combo Pack of Active 50 Test Strip & 2 Pack of Softclix Lancet (25 Each)",
       "packsize": "combo pack of 3 units",
-      "strike-price": "₹1299",
+      "strike-price": "1299",
       "discount-percent": "2% off",
-      "price": "₹1267",
+      "price": 127,
       "category": "combo"
     },
     {
       "href": "https://www.1mg.com/otc/durex-honeymoon-pack-mutual-climax-condoms-sensual-lube-otc671599",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/56346ef6-9312-4f9f-904a-a9559a06d29d.jpeg",
-      "name": "Durex Honeymoon Pack (Mutual Climax Condoms + Sensual Lube)",
+      "title": "Durex Honeymoon Pack (Mutual Climax Condoms + Sensual Lube)",
       "packsize": "combo pack of 2 Packs",
-      "strike-price": "₹1059",
+      "strike-price": "1059",
       "discount-percent": "18% off",
-      "price": "₹865",
+      "price": 86,
       "category": "combo"
     },
     {
       "href": "https://www.1mg.com/otc/immunity-care-combo-of-1mg-panch-tulsi-30ml-drops-and-patanjali-ayurveda-giloy-ghanvati-60-tablet-otc616493",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/qir6i2zlhzeddxa4mqt0.jpg",
-      "name": "Immunity Care Combo of 1mg Panch Tulsi 30ml Drops and Patanjali Ayurveda Giloy Ghanvati 60 Tablet",
+      "title": "Immunity Care Combo of 1mg Panch Tulsi 30ml Drops and Patanjali Ayurveda Giloy Ghanvati 60 Tablet",
       "packsize": "combo pack of 2 Packs",
-      "strike-price": "₹335",
+      "strike-price": "335",
       "discount-percent": "21% off",
-      "price": "₹264",
+      "price": 265,
       "category": "combo"
     },
     {
       "href": "https://www.1mg.com/otc/acne-care-combo-of-cetaphil-oily-skin-cleanser-125ml-and-klm-klin-face-wash-100ml-otc623950",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cr9a2p0evnuzwvw5ksp1.jpg",
-      "name": "Acne Care Combo of Cetaphil Oily Skin Cleanser 125ml and Klm Klin Face Wash 100ml",
+      "title": "Acne Care Combo of Cetaphil Oily Skin Cleanser 125ml and Klm Klin Face Wash 100ml",
       "packsize": "combo pack of 2 Packs",
-      "strike-price": "₹820",
+      "strike-price": "820",
       "discount-percent": "11% off",
-      "price": "₹726",
+      "price": 720,
       "category": "combo"
     },
     {
       "href": "https://www.1mg.com/otc/accu-chek-active-combo-of-glucometer-with-10-test-strip-free-and-50-test-strips-otc624431",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/if0qou7t1ptcaaowcigp.jpg",
-      "name": "Accu-Chek Active Combo of Glucometer with 10 Test Strip Free and 50 Test Strips",
+      "title": "Accu-Chek Active Combo of Glucometer with 10 Test Strip Free and 50 Test Strips",
       "packsize": "combo pack of 2 Packs",
-      "strike-price": "₹2048",
+      "strike-price": "2048",
       "discount-percent": "6% off",
-      "price": "₹1922",
+      "price": 1920,
       "category": "combo"
     },
     {
       "href": "https://www.1mg.com/otc/tata-1mg-diabetes-care-combo-pack-for-blood-sugar-cholestrol-management-otc787635",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/uca5jm0uqfqpjoyydzh0.jpg",
-      "name": "Tata 1mg Diabetes Care Combo Pack for Blood Sugar & Cholestrol Management",
+      "title": "Tata 1mg Diabetes Care Combo Pack for Blood Sugar & Cholestrol Management",
       "packsize": "combo pack of 4 bottles",
-      "strike-price": "₹1580",
+      "strike-price": "1580",
       "discount-percent": "57% off",
-      "price": "₹677",
+      "price": 670,
       "category": "combo"
     }
   ],
@@ -221,8 +605,8 @@
     {
       "href": "https://www.1mg.com/drugs/augmentin-625-duo-tablet-138629",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/eluna27m2ptghojxlawz.png",
-      "name": "Augmentin 625 Duo Tablet",
-      "price": "₹223.42",
+      "title": "Augmentin 625 Duo Tablet",
+      "price": 22.426,
       "packsize": "strip of 10 tablets",
       "company": "Glaxo SmithKline Pharmaceuticals Ltd",
       "drug": "Amoxycillin  (500mg) +  Clavulanic Acid (125mg)",
@@ -231,8 +615,8 @@
     {
       "href": "https://www.1mg.com/drugs/ascoril-ls-syrup-63412",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/ruma122iif8yx1nwhpfe.jpg",
-      "name": "Ascoril LS Syrup",
-      "price": "₹118",
+      "title": "Ascoril LS Syrup",
+      "price": 116,
       "packsize": "bottle of 100 ml Syrup",
       "company": "Glenmark Pharmaceuticals Ltd",
       "drug": "Ambroxol (30mg/5ml) + Levosalbutamol (1mg/5ml) + Guaifenesin (50mg/5ml)",
@@ -241,8 +625,8 @@
     {
       "href": "https://www.1mg.com/drugs/azithral-500-tablet-325616",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/gbliwoki0x2rzz6ipnz9.jpg",
-      "name": "Azithral 500 Tablet",
-      "price": "₹132.36",
+      "title": "Azithral 500 Tablet",
+      "price": 13.365,
       "packsize": "strip of 5 tablets",
       "company": "Alembic Pharmaceuticals Ltd",
       "drug": "Azithromycin (500mg)",
@@ -251,8 +635,8 @@
     {
       "href": "https://www.1mg.com/drugs/allegra-120mg-tablet-68763",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/72cfa26ecaf14e7f8285525d3ffe61f3.jpg",
-      "name": "Allegra 120mg Tablet",
-      "price": "₹218.81",
+      "title": "Allegra 120mg Tablet",
+      "price": 21.816,
       "packsize": "strip of 10 tablets",
       "company": "Sanofi India  Ltd",
       "drug": "Fexofenadine (120mg)",
@@ -261,8 +645,8 @@
     {
       "href": "https://www.1mg.com/drugs/ascoril-d-plus-syrup-sugar-free-184611",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/la9aelaydysxuaizrcd5.jpg",
-      "name": "Ascoril D Plus Syrup Sugar Free",
-      "price": "₹129",
+      "title": "Ascoril D Plus Syrup Sugar Free",
+      "price": 122,
       "packsize": "bottle of 100 ml Syrup",
       "company": "Glenmark Pharmaceuticals Ltd",
       "drug": "Phenylephrine (5mg) + Chlorpheniramine Maleate (2mg) + Dextromethorphan Hydrobromide (10mg)",
@@ -271,8 +655,8 @@
     {
       "href": "https://www.1mg.com/drugs/allegra-m-tablet-9172",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/reypogwmuwm3tqt3l8yq.jpg",
-      "name": "Allegra-M Tablet",
-      "price": "₹251.3",
+      "title": "Allegra-M Tablet",
+      "price": 25.35,
       "packsize": "strip of 10 tablets",
       "company": "Sanofi India  Ltd",
       "drug": "Montelukast (10mg) + Fexofenadine (120mg)",
@@ -281,8 +665,8 @@
     {
       "href": "https://www.1mg.com/drugs/azee-500-tablet-324155",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/isxuezdzbz8a5mi2jcmw.jpg",
-      "name": "Azee 500 Tablet",
-      "price": "₹132.38",
+      "title": "Azee 500 Tablet",
+      "price": 213.38,
       "packsize": "strip of 5 tablets",
       "company": "Cipla Ltd",
       "drug": "Azithromycin (500mg)",
@@ -291,8 +675,8 @@
     {
       "href": "https://www.1mg.com/drugs/atarax-25mg-tablet-228160",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/ea0seoqvuvbylykjwb4g.jpg",
-      "name": "Atarax 25mg Tablet",
-      "price": "₹85.5",
+      "title": "Atarax 25mg Tablet",
+      "price": 855,
       "packsize": "strip of 15 tablets",
       "company": "Dr Reddy's Laboratories Ltd",
       "drug": "Hydroxyzine (25mg)",
@@ -301,8 +685,8 @@
     {
       "href": "https://www.1mg.com/drugs/arkamin-tablet-330260",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/azshjseewgrghgoo3jzl.jpg",
-      "name": "Arkamin Tablet",
-      "price": "₹72.65",
+      "title": "Arkamin Tablet",
+      "price": 72655,
       "packsize": "strip of 30 tablets",
       "company": "Torrent Pharmaceuticals Ltd",
       "drug": "Clonidine (100mcg)",
@@ -311,8 +695,8 @@
     {
       "href": "https://www.1mg.com/drugs/avil-25-tablet-69629",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/rm5eel4umeiitnk1oggl.jpg",
-      "name": "Avil 25 Tablet",
-      "price": "₹10.97",
+      "title": "Avil 25 Tablet",
+      "price": 1097,
       "packsize": "strip of 15 tablets",
       "company": "Sanofi India  Ltd",
       "drug": "Pheniramine (25mg)",
@@ -321,8 +705,8 @@
     {
       "href": "https://www.1mg.com/drugs/alex-syrup-63175",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/pham6qafha8bqpq6j0jy.jpg",
-      "name": "Alex Syrup",
-      "price": "₹129",
+      "title": "Alex Syrup",
+      "price": 125,
       "packsize": "bottle of 100 ml Syrup",
       "company": "Glenmark Pharmaceuticals Ltd",
       "drug": "Phenylephrine (5mg/5ml) + Chlorpheniramine Maleate (2mg/5ml) + Dextromethorphan Hydrobromide (10mg/5ml)",
@@ -331,8 +715,8 @@
     {
       "href": "https://www.1mg.com/drugs/amoxyclav-625-tablet-491614",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/uicdp4ef3wunqoeo6ekx.jpg",
-      "name": "Amoxyclav 625 Tablet",
-      "price": "₹223.27",
+      "title": "Amoxyclav 625 Tablet",
+      "price": 22.275,
       "packsize": "strip of 10 tablets",
       "company": "Abbott",
       "drug": "Amoxycillin  (500mg) +  Clavulanic Acid (125mg)",
@@ -341,8 +725,8 @@
     {
       "href": "https://www.1mg.com/drugs/asthakind-dx-syrup-sugar-free-149334",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/ggfmxw9cxcghbxpxhgkz.jpg",
-      "name": "Asthakind-DX Syrup Sugar Free",
-      "price": "₹70.4",
+      "title": "Asthakind-DX Syrup Sugar Free",
+      "price": 704,
       "packsize": "bottle of 60 ml Syrup",
       "company": "Mankind Pharma Ltd",
       "drug": "Phenylephrine (5mg/5ml) + Chlorpheniramine Maleate (2mg/5ml) + Dextromethorphan Hydrobromide (15mg/5ml)",
@@ -351,8 +735,8 @@
     {
       "href": "https://www.1mg.com/drugs/ambrodil-s-syrup-161343",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/zttzpu31uai1qa2uugye.jpg",
-      "name": "Ambrodil-S Syrup",
-      "price": "₹33.05",
+      "title": "Ambrodil-S Syrup",
+      "price": 33055,
       "packsize": "bottle of 100 ml Syrup",
       "company": "Aristo Pharmaceuticals Pvt Ltd",
       "drug": "Ambroxol (15mg/5ml) + Salbutamol (1mg/5ml)",
@@ -361,8 +745,8 @@
     {
       "href": "https://www.1mg.com/drugs/augmentin-duo-oral-suspension-324979",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/jkxdngoylqkp5x62kawy.jpg",
-      "name": "Augmentin Duo Oral Suspension",
-      "price": "₹67.2",
+      "title": "Augmentin Duo Oral Suspension",
+      "price": 6725,
       "packsize": "bottle of 30 ml Oral Suspension",
       "company": "Glaxo SmithKline Pharmaceuticals Ltd",
       "drug": "Amoxycillin  (200mg) +  Clavulanic Acid (28.5mg)",
@@ -371,8 +755,8 @@
     {
       "href": "https://www.1mg.com/drugs/avomine-tablet-28784",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/qrm9ovvuriq5ejtpg6rh.jpg",
-      "name": "Avomine Tablet",
-      "price": "₹55.98",
+      "title": "Avomine Tablet",
+      "price": 5598,
       "packsize": "strip of 10 tablets",
       "company": "Abbott",
       "drug": "Promethazine (25mg)",
@@ -381,8 +765,8 @@
     {
       "href": "https://www.1mg.com/drugs/aldactone-tablet-116839",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/wxjxsugwqsf4khtkerag.jpg",
-      "name": "Aldactone Tablet",
-      "price": "₹35.35",
+      "title": "Aldactone Tablet",
+      "price": 35355,
       "packsize": "strip of 15 tablets",
       "company": "RPG Life Sciences Ltd",
       "drug": "Spironolactone (25mg)",
@@ -391,8 +775,8 @@
     {
       "href": "https://www.1mg.com/drugs/anovate-cream-63345",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/hbpfkdeafbynmeh8kovy.jpg",
-      "name": "Anovate Cream",
-      "price": "₹134.2",
+      "title": "Anovate Cream",
+      "price": 13.21,
       "packsize": "tube of 20 gm Cream",
       "company": "USV Ltd",
       "drug": "Phenylephrine (0.10% w/w) + Beclometasone (0.025% w/w) + Lidocaine (2.50% w/w)",
@@ -401,8 +785,8 @@
     {
       "href": "https://www.1mg.com/drugs/aciloc-150-tablet-134660",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/ogfwolxtutjau5qgmqth.jpg",
-      "name": "Aciloc 150 Tablet",
-      "price": "₹40.94",
+      "title": "Aciloc 150 Tablet",
+      "price": 40945,
       "packsize": "strip of 30 tablets",
       "company": "Cadila Pharmaceuticals Ltd",
       "drug": "Ranitidine (150mg)",
@@ -411,8 +795,8 @@
     {
       "href": "https://www.1mg.com/drugs/axcer-90mg-tablet-324040",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/xewhk7iu0vmvlqmk1oha.jpg",
-      "name": "Axcer  90mg Tablet",
-      "price": "₹420",
+      "title": "Axcer  90mg Tablet",
+      "price": 425,
       "packsize": "strip of 14 tablets",
       "company": "Sun Pharmaceutical Industries Ltd",
       "drug": "Ticagrelor (90mg)",
@@ -421,8 +805,8 @@
     {
       "href": "https://www.1mg.com/drugs/altraday-capsule-sr-63221",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/tqux8ccp05qx3npvxex9.jpg",
-      "name": "Altraday Capsule SR",
-      "price": "₹128",
+      "title": "Altraday Capsule SR",
+      "price": 129,
       "packsize": "strip of 10 capsule sr",
       "company": "Sun Pharmaceutical Industries Ltd",
       "drug": "Aceclofenac (200mg) + Rabeprazole (20mg)",
@@ -431,8 +815,8 @@
     {
       "href": "https://www.1mg.com/drugs/amlokind-at-tablet-648536",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/pbpz7oquqyggsdyvw4h5.png",
-      "name": "Amlokind-AT Tablet",
-      "price": "₹44.7",
+      "title": "Amlokind-AT Tablet",
+      "price": 4478,
       "packsize": "strip of 15 tablets",
       "company": "Mankind Pharma Ltd",
       "drug": "Amlodipine (5mg) + Atenolol (50mg)",
@@ -441,8 +825,8 @@
     {
       "href": "https://www.1mg.com/drugs/allegra-180mg-tablet-9187",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/bda909963ad0474cac331f6f9247a284.jpg",
-      "name": "Allegra 180mg Tablet",
-      "price": "₹251.2",
+      "title": "Allegra 180mg Tablet",
+      "price": 25.29,
       "packsize": "strip of 10 tablets",
       "company": "Sanofi India  Ltd",
       "drug": "Fexofenadine (180mg)",
@@ -451,8 +835,8 @@
     {
       "href": "https://www.1mg.com/drugs/asthalin-100mcg-inhaler-141944",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/bznpbcdsc9ae6rw5er6k.jpg",
-      "name": "Asthalin 100mcg Inhaler",
-      "price": "₹157.85",
+      "title": "Asthalin 100mcg Inhaler",
+      "price": 15.858,
       "packsize": "packet of 200 MDI Inhaler",
       "company": "Cipla Ltd",
       "drug": "Salbutamol (100mcg)",
@@ -461,8 +845,8 @@
     {
       "href": "https://www.1mg.com/drugs/ativan-2mg-tablet-236513",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/hx2gxivwmeoxxxsc1hix.png",
-      "name": "Ativan 2mg Tablet",
-      "price": "₹91.87",
+      "title": "Ativan 2mg Tablet",
+      "price": 91878,
       "packsize": "strip of 30 tablets",
       "company": "Pfizer Ltd",
       "drug": "Lorazepam (2mg)",
@@ -471,8 +855,8 @@
     {
       "href": "https://www.1mg.com/drugs/ascoril-ls-junior-syrup-340445",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/exek7p354rrqgtlbjwp0.jpg",
-      "name": "Ascoril LS Junior Syrup",
-      "price": "₹96",
+      "title": "Ascoril LS Junior Syrup",
+      "price": 96,
       "packsize": "bottle of 60 ml Syrup",
       "company": "Glenmark Pharmaceuticals Ltd",
       "drug": "Ambroxol (15mg/5ml) + Levosalbutamol (0.5mg/5ml) + Guaifenesin (50mg/5ml)",
@@ -481,8 +865,8 @@
     {
       "href": "https://www.1mg.com/drugs/aciloc-rd-20-tablet-643918",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/epbgofppoky6cermgzyx.png",
-      "name": "Aciloc RD 20 Tablet",
-      "price": "₹77",
+      "title": "Aciloc RD 20 Tablet",
+      "price": 77,
       "packsize": "strip of 15 tablets",
       "company": "Cadila Pharmaceuticals Ltd",
       "drug": "Domperidone (10mg) + Omeprazole (20mg)",
@@ -491,8 +875,8 @@
     {
       "href": "https://www.1mg.com/drugs/asthalin-syrup-69589",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/l2l4dgzdkuyvhb2gcksl.jpg",
-      "name": "Asthalin Syrup",
-      "price": "₹19.04",
+      "title": "Asthalin Syrup",
+      "price": 19042,
       "packsize": "bottle of 100 ml Syrup",
       "company": "Cipla Ltd",
       "drug": "Salbutamol (2mg/5ml)",
@@ -501,8 +885,8 @@
     {
       "href": "https://www.1mg.com/drugs/azmarda-50mg-tablet-345285",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/c9e40e6c-ceed-472d-9bff-064154962c85.png",
-      "name": "Azmarda 50mg Tablet",
-      "price": "₹1092.03",
+      "title": "Azmarda 50mg Tablet",
+      "price": 102.039,
       "packsize": "strip of 14 tablets",
       "company": "J B Chemicals and Pharmaceuticals Ltd",
       "drug": "Sacubitril (24mg) + Valsartan (26mg)",
@@ -511,8 +895,8 @@
     {
       "href": "https://www.1mg.com/drugs/ativan-1mg-tablet-322827",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/hx2gxivwmeoxxxsc1hix.png",
-      "name": "Ativan 1mg Tablet",
-      "price": "₹75.67",
+      "title": "Ativan 1mg Tablet",
+      "price": 75679,
       "packsize": "strip of 30 tablets",
       "company": "Pfizer Ltd",
       "drug": "Lorazepam (1mg)",
@@ -521,8 +905,8 @@
     {
       "href": "https://www.1mg.com/drugs/budecort-0.5mg-respules-2ml-351796",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/lzupbnuthjghpr2yzjnh.jpg",
-      "name": "Budecort 0.5mg Respules 2ml",
-      "price": "₹132.3",
+      "title": "Budecort 0.5mg Respules 2ml",
+      "price": 13.38,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "packet of 5 respules",
@@ -533,8 +917,8 @@
     {
       "href": "https://www.1mg.com/drugs/brilinta-90mg-tablet-119687",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/836316f362244d59ac8f943a8811d07c.jpg",
-      "name": "Brilinta 90mg Tablet",
-      "price": "₹450",
+      "title": "Brilinta 90mg Tablet",
+      "price": 458,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "strip of 14 tablets",
@@ -545,8 +929,8 @@
     {
       "href": "https://www.1mg.com/drugs/bro-zedex-syrup-180516",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/qpoyv5qsb1wivuftbggf.jpg",
-      "name": "Bro-Zedex Syrup",
-      "price": "₹142.5",
+      "title": "Bro-Zedex Syrup",
+      "price": 14.58,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "bottle of 100 ml Syrup",
@@ -557,8 +941,8 @@
     {
       "href": "https://www.1mg.com/drugs/benadryl-syrup-114690",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/vmhgxvg9ahh6tcx3cphb.jpg",
-      "name": "Benadryl Syrup",
-      "price": "₹141",
+      "title": "Benadryl Syrup",
+      "price": 148,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "bottle of 150 ml Syrup",
@@ -569,8 +953,8 @@
     {
       "href": "https://www.1mg.com/drugs/betnesol-tablet-70138",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/jkfuswdj9kou8amwl866.jpg",
-      "name": "Betnesol Tablet",
-      "price": "₹14.1",
+      "title": "Betnesol Tablet",
+      "price": 1418,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "strip of 20 tablets",
@@ -581,8 +965,8 @@
     {
       "href": "https://www.1mg.com/drugs/bilasure-m-20mg-10mg-tablet-623647",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/z6qyi9pa1uillb52et3r.jpg",
-      "name": "Bilasure M 20mg/10mg Tablet",
-      "price": "₹172",
+      "title": "Bilasure M 20mg/10mg Tablet",
+      "price": 178,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "strip of 10 tablets",
@@ -593,8 +977,8 @@
     {
       "href": "https://www.1mg.com/drugs/bandy-plus-chewable-tablet-68909",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/nhjcjbagi2pftfmspwbr.jpg",
-      "name": "Bandy-Plus Chewable Tablet",
-      "price": "₹27",
+      "title": "Bandy-Plus Chewable Tablet",
+      "price": 27,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "strip of 1 Chewable Tablet",
@@ -605,8 +989,8 @@
     {
       "href": "https://www.1mg.com/drugs/betnovate-c-cream-149634",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/jshf0zrxvfrd7q45wn89.jpg",
-      "name": "Betnovate-C Cream",
-      "price": "₹58.6",
+      "title": "Betnovate-C Cream",
+      "price": 5866,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "tube of 30 gm Cream",
@@ -617,8 +1001,8 @@
     {
       "href": "https://www.1mg.com/drugs/betnovate-n-cream-651249",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/ox33iprumohgtqtwpf6o.png",
-      "name": "Betnovate-N  Cream",
-      "price": "₹50.3",
+      "title": "Betnovate-N  Cream",
+      "price": 5038,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "tube of 25 gm Cream",
@@ -629,8 +1013,8 @@
     {
       "href": "https://www.1mg.com/drugs/buscopan-10mg-tablet-400562",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/hx2gxivwmeoxxxsc1hix.png",
-      "name": "Buscopan 10mg Tablet",
-      "price": "₹39.5",
+      "title": "Buscopan 10mg Tablet",
+      "price": 3958,
       "letter": "",
       "type": "",
       "packsize": "strip of 10 tablets",
@@ -641,8 +1025,8 @@
     {
       "href": "https://www.1mg.com/drugs/brufen-400-tablet-70206",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/vnon1e0kiinmhqwgk12u.jpg",
-      "name": "Brufen 400 Tablet",
-      "price": "₹19.32",
+      "title": "Brufen 400 Tablet",
+      "price": 19328,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "strip of 15 tablets",
@@ -653,8 +1037,8 @@
     {
       "href": "https://www.1mg.com/drugs/bilypsa-tablet-349283",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/ljwbrazjime6vy3gisrm.jpg",
-      "name": "Bilypsa Tablet",
-      "price": "₹1808",
+      "title": "Bilypsa Tablet",
+      "price": 1888,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "box of 45 tablets",
@@ -665,8 +1049,8 @@
     {
       "href": "https://www.1mg.com/drugs/betacap-tr-40-capsule-28883",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cirdzc8jooadogsgetnp.jpg",
-      "name": "Betacap TR 40 Capsule",
-      "price": "₹47.25",
+      "title": "Betacap TR 40 Capsule",
+      "price": 47258,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "strip of 10 capsule pr",
@@ -677,8 +1061,8 @@
     {
       "href": "https://www.1mg.com/drugs/banocide-forte-tablet-165789",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/wpac9zqyrapfcqcjbuie.jpg",
-      "name": "Banocide Forte Tablet",
-      "price": "₹51.95",
+      "title": "Banocide Forte Tablet",
+      "price": 51958,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "strip of 30 tablets",
@@ -689,8 +1073,8 @@
     {
       "href": "https://www.1mg.com/drugs/betnovate-cream-13631",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/Betnovate_0.1_Cream-20.0gm-tube-1.jpg",
-      "name": "Betnovate Cream",
-      "price": "₹20.81",
+      "title": "Betnovate Cream",
+      "price": 20818,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "tube of 20 gm Cream",
@@ -701,8 +1085,8 @@
     {
       "href": "https://www.1mg.com/drugs/betadine-2-gargle-mint-322922",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/baqlbagprmjrnwbnafrb.jpg",
-      "name": "Betadine 2% Gargle Mint",
-      "price": "₹153.5",
+      "title": "Betadine 2% Gargle Mint",
+      "price": 15.58,
       "letter": "",
       "type": "",
       "packsize": "bottle of 50 ml Gargle",
@@ -713,8 +1097,8 @@
     {
       "href": "https://www.1mg.com/drugs/bactrim-ds-tablet-120037",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/hx2gxivwmeoxxxsc1hix.png",
-      "name": "Bactrim DS Tablet",
-      "price": "₹25.14",
+      "title": "Bactrim DS Tablet",
+      "price": 25148,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "strip of 10 tablets",
@@ -725,8 +1109,8 @@
     {
       "href": "https://www.1mg.com/drugs/betadine-10-ointment-616166",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/akwnavra5bco01snl9ap.png",
-      "name": "Betadine 10% Ointment",
-      "price": "₹139.47",
+      "title": "Betadine 10% Ointment",
+      "price": 13.478,
       "letter": "",
       "type": "",
       "packsize": "tube of 20 gm Ointment",
@@ -737,8 +1121,8 @@
     {
       "href": "https://www.1mg.com/drugs/betaloc-25mg-tablet-70130",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/a008994a3e4a4ba6bb3f3c8ea3acb250.jpg",
-      "name": "Betaloc 25mg Tablet",
-      "price": "₹109.5",
+      "title": "Betaloc 25mg Tablet",
+      "price": 10.58,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "strip of 30 tablets",
@@ -749,8 +1133,8 @@
     {
       "href": "https://www.1mg.com/drugs/broclear-tablet-323782",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/adwtqoazpp2s06tzi1wy.jpg",
-      "name": "Broclear Tablet",
-      "price": "₹209",
+      "title": "Broclear Tablet",
+      "price": 208,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "strip of 10 tablets",
@@ -761,8 +1145,8 @@
     {
       "href": "https://www.1mg.com/drugs/bilashine-tablet-528291",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/houuiay6xfekj4petbyl.jpg",
-      "name": "Bilashine Tablet",
-      "price": "₹127",
+      "title": "Bilashine Tablet",
+      "price": 128,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "strip of 10 tablets",
@@ -773,8 +1157,8 @@
     {
       "href": "https://www.1mg.com/drugs/benzac-ac-2.5-gel-678551",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/ixkeylkpuki25xikwifn.png",
-      "name": "Benzac AC 2.5% Gel",
-      "price": "₹137.3",
+      "title": "Benzac AC 2.5% Gel",
+      "price": 13.38,
       "letter": "",
       "type": "",
       "packsize": "tube of 30 gm Gel",
@@ -785,8 +1169,8 @@
     {
       "href": "https://www.1mg.com/drugs/betadine-10-solution-182348",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/civy1x8sfxg5xmtq7zlz.jpg",
-      "name": "Betadine 10% Solution",
-      "price": "₹115.36",
+      "title": "Betadine 10% Solution",
+      "price": 11.368,
       "letter": "",
       "type": "",
       "packsize": "bottle of 100 ml Solution",
@@ -797,8 +1181,8 @@
     {
       "href": "https://www.1mg.com/drugs/brevipil-50-tablet-640116",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/lpmvsxejwvlfmy23ezpy.jpg",
-      "name": "Brevipil 50 Tablet",
-      "price": "₹161",
+      "title": "Brevipil 50 Tablet",
+      "price": 168,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "strip of 10 tablets",
@@ -809,8 +1193,8 @@
     {
       "href": "https://www.1mg.com/drugs/benadryl-dr-syrup-90438",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/ui40vh5wyujqysny8dye.jpg",
-      "name": "Benadryl DR Syrup",
-      "price": "₹123",
+      "title": "Benadryl DR Syrup",
+      "price": 128,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "bottle of 100 ml Syrup",
@@ -821,8 +1205,8 @@
     {
       "href": "https://www.1mg.com/drugs/baclof-10-tablet-48246",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/dgcoche6tasmzinji4fy.jpg",
-      "name": "Baclof 10 Tablet",
-      "price": "₹125.37",
+      "title": "Baclof 10 Tablet",
+      "price": 12.378,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "strip of 10 tablets",
@@ -833,8 +1217,8 @@
     {
       "href": "https://www.1mg.com/drugs/budesal-0.5mg-respules-2ml-367591",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/hx2gxivwmeoxxxsc1hix.png",
-      "name": "Budesal 0.5mg Respules 2ml",
-      "price": "₹219.6",
+      "title": "Budesal 0.5mg Respules 2ml",
+      "price": 21.68,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "packet of 5 respules",
@@ -845,8 +1229,8 @@
     {
       "href": "https://www.1mg.com/drugs/budecort-200-inhaler-145190",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/orsztfnerkupvkaj7gfl.jpg",
-      "name": "Budecort 200 Inhaler",
-      "price": "₹439.04",
+      "title": "Budecort 200 Inhaler",
+      "price": 43.048,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "packet of 200 MDI Inhaler",
@@ -857,8 +1241,8 @@
     {
       "href": "https://www.1mg.com/drugs/betnovate-gm-cream-159688",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/zjykqoh2gxrhjtwfghjy.jpg",
-      "name": "Betnovate-GM Cream",
-      "price": "₹37.45",
+      "title": "Betnovate-GM Cream",
+      "price": 37458,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "tube of 20 gm Cream",
@@ -869,8 +1253,8 @@
     {
       "href": "https://www.1mg.com/drugs/botroclot-topical-solution-12441",
       "src": "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/oxvwb9p4o7dlqthmq2g0.jpg",
-      "name": "Botroclot Topical Solution",
-      "price": "₹153",
+      "title": "Botroclot Topical Solution",
+      "price": 158,
       "letter": "b",
       "type": "Prescription Required",
       "packsize": "bottle of 10 ml Solution",
@@ -883,187 +1267,187 @@
     {
       "href": "https://www.1mg.com/diseases/acidity-42",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/nc1b2nmmsjm0cpzzwuri.png",
-      "name": "Acidity",
+      "title": "Acidity",
       "description": "Acidity is one of the most common ailments that almost every one of us might have..."
     },
     {
       "href": "https://www.1mg.com/diseases/acne-261",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/r1lq3ouhxzhaeg2asehv.png",
-      "name": "Acne",
+      "title": "Acne",
       "description": "Acne is a common condition, which most of us have dealt with at some point in our..."
     },
     {
       "href": "https://www.1mg.com/diseases/allergic-conditions-10",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/w7jst3btu1n9jevpt9wm.png",
-      "name": "Allergic conditions",
+      "title": "Allergic conditions",
       "description": "Allergies are caused when the body’s immune system responds abnormally to an exte..."
     },
     {
       "href": "https://www.1mg.com/diseases/alzheimer-s-disease-179",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/d7mqchz1ypnnijp9rz7k.png",
-      "name": "Alzheimer's disease",
+      "title": "Alzheimer's disease",
       "description": "Alzheimer's disease (AD) is a slowly progressive disorder of the brain that fades..."
     },
     {
       "href": "https://www.1mg.com/diseases/amenorrhea-467",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/agflfkldbzvjh7zohjdw.png",
-      "name": "Amenorrhea",
+      "title": "Amenorrhea",
       "description": "Amenorrhea is defined as the absence of menstruation during the reproductive year..."
     },
     {
       "href": "https://www.1mg.com/diseases/anaphylaxis-947",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/u1dj1e3bf17qfrt10zsj.png",
-      "name": "Anaphylaxis",
+      "title": "Anaphylaxis",
       "description": "Anaphylaxis is a severe, life-threatening allergic reaction that can affect multi..."
     },
     {
       "href": "https://www.1mg.com/diseases/anorexia-nervosa-928",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/ton4gznuqqqzpjt8usjq.png",
-      "name": "Anorexia Nervosa",
+      "title": "Anorexia Nervosa",
       "description": "Anorexia nervosa, often simply referred to as anorexia, is a behavioral and life-..."
     },
     {
       "href": "https://www.1mg.com/diseases/anxiety-69",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/xd0xxmvdwxnfxk8d3lig.png",
-      "name": "Anxiety",
+      "title": "Anxiety",
       "description": "Anxiety disorders are the most common types of mental health conditions. Accordin..."
     },
     {
       "href": "https://www.1mg.com/diseases/arthritis-117",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/ryhaz88cznycpmod7xgq.png",
-      "name": "Arthritis",
+      "title": "Arthritis",
       "description": "Arthritis is a common condition that affects joints and bones (especially the kne..."
     },
     {
       "href": "https://www.1mg.com/diseases/ascites-922",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/gbdwqjdzzs9mkr2t2nsp.png",
-      "name": "Ascites",
+      "title": "Ascites",
       "description": "Ascites is a medical condition that results in the accumulation of fluids within ..."
     },
     {
       "href": "https://www.1mg.com/diseases/asthma-116",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/djlycbpy6uwh8tfiv9sf.png",
-      "name": "Asthma",
+      "title": "Asthma",
       "description": "Asthma is a long term condition in which air passages in the lungs become narrow ..."
     },
     {
       "href": "https://www.1mg.com/diseases/autism-569",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/marketing/2242beaf-32e3-4512-b1d4-7e0f2b1e8723.jpg",
-      "name": "Autism",
+      "title": "Autism",
       "description": "Autism, now known as autism spectrum disorder (ASD), refers to a broad range of c..."
     },
     {
       "href": "https://www.1mg.com/diseases/back-pain-943",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/dvao23wkdmv67u0hbja6.png",
-      "name": "Back pain",
+      "title": "Back pain",
       "description": "Back pain is one of the most common pain complaints that almost everyone has had ..."
     },
     {
       "href": "https://www.1mg.com/diseases/bell-s-palsy-904",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/ire5tvtx8up4x4ermnnm.png",
-      "name": "Bell's palsy",
-      "description": "Bell’s palsy, named after the scientist Sir Charles Bell, who described and resea..."
+      "title": "Bell's palsy",
+      "description": "Bell’s palsy, titled after the scientist Sir Charles Bell, who described and resea..."
     },
     {
       "href": "https://www.1mg.com/diseases/benign-prostatic-hyperplasia-91",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/dbkbocn06pcuejnvaqwp.png",
-      "name": "Benign prostatic hyperplasia",
+      "title": "Benign prostatic hyperplasia",
       "description": "Benign prostatic hyperplasia (BPH) is a medical condition that commonly occurs in..."
     },
     {
       "href": "https://www.1mg.com/diseases/bloating-63",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/qxnql1fvsyzgdrqn7rcg.png",
-      "name": "Bloating",
+      "title": "Bloating",
       "description": "A lot of people complain about gas trouble but don't take it seriously because th..."
     },
     {
       "href": "https://www.1mg.com/diseases/blood-cancer-217",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/aars3maz6zbku5w8wbxu.png",
-      "name": "Blood cancer",
+      "title": "Blood cancer",
       "description": "Blood cancer, also known as leukemia, is a condition in which there is an uncontr..."
     },
     {
       "href": "https://www.1mg.com/diseases/body-ache-906",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/lodvywg4pb8xxgog7eu8.png",
-      "name": "Body Ache",
+      "title": "Body Ache",
       "description": "A feeling of generalized, dull aching pain all over the body that may or may not ..."
     },
     {
       "href": "https://www.1mg.com/diseases/breast-cancer-134",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/jyxjyz6x6gg4ikby4jrr.png",
-      "name": "Breast cancer",
+      "title": "Breast cancer",
       "description": "Any changes in the breast or nipples, lumps in the armpit, pain in the breast or ..."
     },
     {
       "href": "https://www.1mg.com/diseases/bronchitis-905",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/c9144vrv84kylnqaeo7p.png",
-      "name": "Bronchitis",
+      "title": "Bronchitis",
       "description": "Bronchitis is an inflammatory reaction of the lining of the bronchial tubes (or a..."
     },
     {
       "href": "https://www.1mg.com/diseases/bulimia-nervosa-870",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/ovi6sbtrhzv4xqzuvhyt.jpg",
-      "name": "Bulimia nervosa",
+      "title": "Bulimia nervosa",
       "description": "Bulimia nervosa is a eating disorder characterised by episodes of binge eating a ..."
     },
     {
       "href": "https://www.1mg.com/diseases/cataract-540",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/marketing/2f8be387-5510-4c91-80b2-8d36b02d1d06.jpg",
-      "name": "Cataract",
+      "title": "Cataract",
       "description": "A cataract is an eye ailment in which the clear eye lens becomes opaque, obstruct..."
     },
     {
       "href": "https://www.1mg.com/diseases/cervical-cancer-228",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/grfxj7rqcvcutqwfhf26.png",
-      "name": "Cervical cancer",
+      "title": "Cervical cancer",
       "description": "Cervix is the lowermost part of the womb (uterus) that lies on top of the vagina...."
     },
     {
       "href": "https://www.1mg.com/diseases/chickenpox-288",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/rximdbbwbsitjgk9pbau.png",
-      "name": "Chickenpox",
+      "title": "Chickenpox",
       "description": "Chickenpox is a viral infection caused by the varicella zoster virus (VZV, also k..."
     },
     {
       "href": "https://www.1mg.com/diseases/colon-cancer-933",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/f2fp1nuk0rupazsjnfpn.png",
-      "name": "Colon cancer",
+      "title": "Colon cancer",
       "description": "Colon cancer is a condition in which there is an uncontrolled growth and multipli..."
     },
     {
       "href": "https://www.1mg.com/diseases/common-cold-589",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/frey9gqibr3bobzgbilh.png",
-      "name": "Common cold",
+      "title": "Common cold",
       "description": "Common cold is one of the most common ailments that every one of us might have ha..."
     },
     {
       "href": "https://www.1mg.com/diseases/conjunctivitis-266",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/m5mp2owzbk1mvxhhf5l1.png",
-      "name": "Conjunctivitis",
+      "title": "Conjunctivitis",
       "description": "Conjunctivitis is an infection of conjunctiva, a transparent membrane that lines ..."
     },
     {
       "href": "https://www.1mg.com/diseases/constipation-61",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/gvx9xcbdt6uypnou98ir.png",
-      "name": "Constipation",
+      "title": "Constipation",
       "description": "Constipation is a common health problem that causes difficulty in passing stools ..."
     },
     {
       "href": "https://www.1mg.com/diseases/corns-558",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/marketing/3417b2d7-8d1a-4aed-b72a-8e50df58d3c8.jpg",
-      "name": "Corns",
+      "title": "Corns",
       "description": "Corns are calloused areas of skin that develop to protect skin from damage agains..."
     },
     {
       "href": "https://www.1mg.com/diseases/cough-187",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/z6ajebybzlv1fh2wwp6d.png",
-      "name": "Cough",
+      "title": "Cough",
       "description": "Cough is a protective reflex that expels mucus, bacteria, and other foreign subst..."
     },
     {
       "href": "https://www.1mg.com/diseases/cuts-and-puncture-wounds-902",
       "src": "https://onemg.gumlet.io/a_ignore,w_64,h_64,q_auto,f_auto/njqigminvri3wvpglgtu.png",
-      "name": "Cuts and puncture wounds",
+      "title": "Cuts and puncture wounds",
       "description": "Injuries caused by sharp objects that damage the skin and result in the exposure ..."
     }
   ]

@@ -15,7 +15,7 @@ function CarouselCard({ p }) {
         mb={"10px"}
         fontWeight={600}
       >
-        {p.name}
+        {p.title}
       </Text>
       <Text
         className={styles.text1}
@@ -35,7 +35,7 @@ function CarouselCard({ p }) {
           textDecor="line-through"
           fontWeight={600}
         >
-          {p["strike-price"]}{" "}
+          ₹{p["strike-price"]}{" "}
         </Text>
         <Text
           className={styles.text}

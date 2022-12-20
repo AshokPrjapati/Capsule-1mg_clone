@@ -17,14 +17,14 @@ const CAT_ITEMS = [
     label: "Health Resources Center",
     children: [
       {
-        label: "All Deases",
+        label: "All disease",
         subLabel: [],
-        href: "#",
+        href: "category/disease",
       },
       {
         label: "All Medicines",
         subLabel: [],
-        href: "#",
+        href: "category/medicine",
       },
       {
         label: "Medicines by Therapeutic Class",

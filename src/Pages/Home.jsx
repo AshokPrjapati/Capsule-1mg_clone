@@ -7,10 +7,11 @@ import SearchNav from "../Components/Navbar/SearchNav";
 function Home() {
   return (
     <>
-      <SearchNav />
-      <Category />
       <Carousel />
-      <ProductCarousel />
+      <ProductCarousel category={"vitamins-suppliments"} />
+      <ProductCarousel category={"combo"} />
+      <ProductCarousel category={"medicine"} />
+      <ProductCarousel category={"disease"} />
     </>
   );
 }

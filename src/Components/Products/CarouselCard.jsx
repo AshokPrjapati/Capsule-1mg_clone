@@ -4,7 +4,12 @@ import styles from "./ProductCarousel.module.css";
 
 function CarouselCard({ p }) {
   return (
-    <Box flexShrink={0} w="15%" _hover={{ shadow: "xl" }} p={"15px"}>
+    <Box
+      flexShrink={0}
+      w={{ base: "50%", md: "15%" }}
+      _hover={{ shadow: "xl" }}
+      p={"15px"}
+    >
       <Box w={"100%"} h={"150px"} mb={"10px"}>
         <Image h="100%" src={p.src} />
       </Box>

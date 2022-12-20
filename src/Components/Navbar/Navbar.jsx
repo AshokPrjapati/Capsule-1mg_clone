@@ -29,7 +29,7 @@ import { CartContext } from "../../Contexts/CartContext";
 const NAV_ITEMS = [
   {
     label: "MEDICINE",
-    href: "#",
+    href: "category/medicine",
   },
   {
     label: "LEB TESTS",

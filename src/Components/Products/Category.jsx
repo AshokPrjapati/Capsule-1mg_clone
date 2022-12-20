@@ -7,9 +7,10 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import axios from "axios";
+
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { fetchCategoryData } from "../API";
 import Filter from "./Filter";
 import Pagination from "./Pagination";
 import styles from "./ProductCarousel.module.css";
@@ -23,19 +24,12 @@ function Category() {
   let limit = 12;
 
   const { category } = useParams();
-  const fetchData = ({ page, limit, sort }) => {
-    return axios
-      .get(
-        `http://localhost:8080/${category}?_page=${page}&_limit=${limit}&${sort}`
-      )
-      .then((res) => {
-        setTotal(res.headers["x-total-count"]);
-        setData(res.data);
-      });
-  };
 
   useEffect(() => {
-    fetchData({ page, limit });
+    fetchCategoryData({ page, limit, category, sort }).then((res) => {
+      setTotal(res.headers["x-total-count"]);
+      setData(res.data);
+    });
   }, [page, limit, sort]);
 
   const handlePage = (val) => {

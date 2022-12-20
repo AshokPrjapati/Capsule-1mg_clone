@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CartContext } from "../Contexts/CartContext";
 import { useContext } from "react";
 import { Box, Text, Flex, Stack, Button } from "@chakra-ui/react";
@@ -8,9 +8,20 @@ import Counter from "../Components/Products/Counter";
 function Cart() {
   const { cartProduct, setCartProduct } = useContext(CartContext);
 
+  let tprice = 0;
+  for (let p of cartProduct) {
+    tprice += p.price;
+  }
+
+  const [tPrice, setTprice] = useState(tprice);
+
   const handleRemove = (id) => {
     const cProducts = cartProduct.filter((el) => el.id !== id);
     setCartProduct(cProducts);
+  };
+
+  const handlePrice = (val) => {
+    setTprice(val);
   };
 
   return (
@@ -51,13 +62,16 @@ function Cart() {
                   Remove
                 </Button>
               </Stack>
-
-              <Counter price={p.price} sPrice={p["strike-price"]} />
+              <Counter
+                handlePrice={handlePrice}
+                price={p.price}
+                sPrice={p["strike-price"]}
+              />
             </Flex>
           </Box>
         ))}
       </Box>
-      <Box w={"40%"}>2</Box>
+      <Box w={"40%"}>{tPrice}</Box>
     </Flex>
   );
 }

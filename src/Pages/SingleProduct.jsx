@@ -13,17 +13,12 @@ import { useParams } from "react-router-dom";
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { CartContext } from "../Contexts/CartContext";
+import { fetchSingleProduct } from "../Components/API";
 
 function SingleProduct() {
   const { id } = useParams();
   const [data, setData] = useState({});
   const { handleCartCount, handleCartProduct } = useContext(CartContext);
-
-  const fetchData = () => {
-    return axios.get(`http://localhost:8080/products/${id}`).then((res) => {
-      setData({ ...data, ...res.data });
-    });
-  };
 
   const handleAdd = (e, i, p) => {
     handleCartCount(1);
@@ -34,7 +29,9 @@ function SingleProduct() {
   };
 
   useEffect(() => {
-    fetchData();
+    fetchSingleProduct({ id }).then((res) => {
+      setData({ ...data, ...res.data });
+    });
   }, []);
 
   return (

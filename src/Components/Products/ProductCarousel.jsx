@@ -3,22 +3,18 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { CarouselData } from "../API";
 import CarouselCard from "./CarouselCard";
 
 function ProductCarousel({ category }) {
   const [data, setData] = useState([]);
-  const fetchData = () => {
-    return axios
-      .get(`http://localhost:8080/${category}?_page=1&_limit=10`)
-      .then((res) => {
-        // console.log(res.data);
-        setData(res.data);
-      });
-  };
 
   useEffect(() => {
-    fetchData();
+    CarouselData({ category }).then((res) => {
+      setData(res.data);
+    });
   }, []);
+
   const slider = document.getElementById("slider");
   const handlePrev = () => {
     let w = slider.clientWidth;
@@ -79,7 +75,6 @@ function ProductCarousel({ category }) {
           overflowX={"hidden"}
           gap="20px"
           scrollBehavior={"smooth"}
-          // h="350px"
         >
           {data.map((p) => (
             <CarouselCard key={p.title} p={{ ...p }} />

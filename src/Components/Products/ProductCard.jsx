@@ -51,6 +51,7 @@ function ProductCard({ handleAdd, id, p }) {
             fontSize={"13px"}
             mb={"10px"}
             fontWeight={600}
+            _hover={{}}
           >
             {p.rating} <BsStarFill />
           </Button>

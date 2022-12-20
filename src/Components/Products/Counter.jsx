@@ -35,7 +35,7 @@ function Counter({ price, sPrice }) {
         <Button
           size={"xs"}
           borderRadius="50%"
-          border={"1px solid red"}
+          border={"1px solid #ff6f61"}
           color="#ff6f61"
           bg={"#fff"}
           fontWeight={700}
@@ -50,7 +50,7 @@ function Counter({ price, sPrice }) {
         <Button
           size={"xs"}
           borderRadius="50%"
-          border={"1px solid red"}
+          border={"1px solid #ff6f61"}
           bg="#ff6f61"
           color={"#fff"}
           p={1}

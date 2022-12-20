@@ -18,7 +18,6 @@ function CartContextProvider({ children }) {
 
   const handleCartCount = (val) => {
     setCartCount(cartCount + val);
-    console.log(cartCount);
   };
 
   const handleCartProduct = ({ ...p }) => {
@@ -26,7 +25,15 @@ function CartContextProvider({ children }) {
   };
 
   return (
-    <CartContext.Provider value={{ handleCartCount, handleCartProduct }}>
+    <CartContext.Provider
+      value={{
+        handleCartCount,
+        handleCartProduct,
+        setCartProduct,
+        cartProduct,
+        cartCount,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

@@ -18,11 +18,13 @@ import {
 } from "@chakra-ui/react";
 
 import { FaShoppingCart } from "react-icons/fa";
+import { Link as RouterLink } from "react-router-dom";
 
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { useContext } from "react";
 import UserCard from "../Auth/UserCard";
+import { CartContext } from "../../Contexts/CartContext";
 
 const NAV_ITEMS = [
   {
@@ -63,6 +65,7 @@ const AUTH_ITEMS = [
 ];
 
 export default function WithSubnavigation() {
+  const { cartCount } = useContext(CartContext);
   const { isReg } = useContext(AuthContext);
   const { isOpen, onToggle } = useDisclosure();
 
@@ -145,7 +148,13 @@ export default function WithSubnavigation() {
           >
             Offer
           </Text>
-          <FaShoppingCart fontSize={"20px"} cursor="pointer" />
+          <RouterLink to="/cart">
+            <FaShoppingCart
+              color={cartCount ? "#ff6f61" : "#000"}
+              fontSize={"20px"}
+              cursor="pointer"
+            />
+          </RouterLink>
           <Text
             as="p"
             cursor="pointer"

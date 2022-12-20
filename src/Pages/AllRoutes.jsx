@@ -7,6 +7,7 @@ import Login from "./Login";
 import Products from "./Products";
 import Category from "../Components/Products/Category";
 import SingleProduct from "./SingleProduct";
+import Cart from "./Cart";
 
 function AllRoutes() {
   return (
@@ -17,6 +18,7 @@ function AllRoutes() {
       <Route path="/products" element={<Products />} />
       <Route path="/category/:category" element={<Category />} />
       <Route path="/products/:id" element={<SingleProduct />} />
+      <Route path="/cart" element={<Cart />} />
     </Routes>
   );
 }

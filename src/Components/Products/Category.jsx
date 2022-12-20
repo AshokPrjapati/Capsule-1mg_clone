@@ -10,6 +10,7 @@ import {
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Filter from "./Filter";
 import Pagination from "./Pagination";
 import styles from "./ProductCarousel.module.css";
 
@@ -17,13 +18,16 @@ function Category() {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(12);
+  const [sort, setSort] = useState("");
 
   let limit = 12;
 
   const { category } = useParams();
-  const fetchData = ({ page, limit }) => {
+  const fetchData = ({ page, limit, sort }) => {
     return axios
-      .get(`http://localhost:8080/${category}?_page=${page}&_limit=${limit}`)
+      .get(
+        `http://localhost:8080/${category}?_page=${page}&_limit=${limit}&${sort}`
+      )
       .then((res) => {
         setTotal(res.headers["x-total-count"]);
         setData(res.data);
@@ -32,15 +36,20 @@ function Category() {
 
   useEffect(() => {
     fetchData({ page, limit });
-  }, [page, limit]);
+  }, [page, limit, sort]);
 
   const handlePage = (val) => {
     setPage(val);
   };
 
+  const handleSort = (val) => {
+    setSort(val);
+    console.log(val);
+  };
+
   return (
     <Flex gap={4} mt="40px">
-      <Box w={"20%"} flexShrink={0}></Box>
+      <Filter handleSort={handleSort} />
       <Box width={"72%"} m={"auto"}>
         <Grid templateColumns={"repeat(4, 1fr)"} gap="20px 20px" p={3}>
           {data.map((p) => (

@@ -11,7 +11,6 @@ import { BsStarFill } from "react-icons/bs";
 
 import { useParams } from "react-router-dom";
 import React, { useEffect, useState, useContext } from "react";
-import axios from "axios";
 import { CartContext } from "../Contexts/CartContext";
 import { fetchSingleProduct } from "../Components/API";
 

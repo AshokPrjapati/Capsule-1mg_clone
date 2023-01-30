@@ -17,8 +17,9 @@ import {
   Avatar,
 } from "@chakra-ui/react";
 
+import styles from "./Navbar.module.css";
 import { FaShoppingCart } from "react-icons/fa";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, NavLink } from "react-router-dom";
 
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { AuthContext } from "../../Contexts/AuthContext";
@@ -95,7 +96,7 @@ export default function WithSubnavigation() {
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Heading align={"left"} color="#000" fontSize="25px">
-            <Link href="/">Capsule</Link>
+            <NavLink to="/">Capsule</NavLink>
           </Heading>
 
           <Flex
@@ -116,27 +117,30 @@ export default function WithSubnavigation() {
             spacing={2}
             display={{ base: "none", md: "none", lg: "flex" }}
           >
-            <Button
-              as={"a"}
-              fontSize={"sm"}
-              fontWeight={400}
-              variant={"link"}
-              href={"/login"}
-              borderRight={"1px solid"}
-              borderRadius="none"
-              pr={"10px"}
-            >
-              Login
-            </Button>
-            <Button
-              as={"a"}
-              fontSize={"sm"}
-              fontWeight={400}
-              variant={"link"}
-              href={"/signup"}
-            >
-              Sign Up
-            </Button>
+            <NavLink to="/login">
+              <Button
+                as={"a"}
+                fontSize={"sm"}
+                fontWeight={400}
+                variant={"link"}
+                borderRight={"1px solid"}
+                borderRadius="none"
+                pr={"10px"}
+              >
+                Login
+              </Button>
+            </NavLink>
+
+            <NavLink to="/signup">
+              <Button
+                as={"a"}
+                fontSize={"sm"}
+                fontWeight={400}
+                variant={"link"}
+              >
+                Sign Up
+              </Button>
+            </NavLink>
           </Stack>
         )}
 
@@ -184,20 +188,20 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Link
-                p={2}
-                href={navItem.href ?? "#"}
-                fontSize={"md"}
-                fontWeight={700}
-                fontFamily="Clear Sans"
-                color={i === 0 ? "#ff6f61" : linkColor}
-                _hover={{
-                  textDecoration: "none",
-                  color: linkHoverColor,
-                }}
-              >
-                {navItem.label}
-              </Link>
+              <NavLink to={navItem.href}>
+                <Text
+                  p={2}
+                  fontSize={"md"}
+                  fontWeight={700}
+                  fontFamily="Clear Sans"
+                  _hover={{
+                    textDecoration: "none",
+                    color: linkHoverColor,
+                  }}
+                >
+                  {navItem.label}
+                </Text>
+              </NavLink>
             </PopoverTrigger>
           </Popover>
         </Box>
@@ -210,9 +214,13 @@ const MobileNav = () => {
   const { isReg, userData, handleIsReg, handleUser } = useContext(AuthContext);
   return (
     <Stack
-      bg={useColorModeValue("white", "gray.800")}
       p={4}
       display={{ md: "none" }}
+      h={"100vh"}
+      position="fixed"
+      zIndex={10}
+      bg="#fff"
+      pointerEvents={"none"}
     >
       {isReg ? (
         <Flex

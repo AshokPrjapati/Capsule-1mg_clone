@@ -1,0 +1,9 @@
+.active {
+    color: "#ff6f61";
+    text-decoration: none;
+}
+
+.default {
+    color: rgb(27, 26, 26);
+    text-decoration: none;
+}

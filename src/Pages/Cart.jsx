@@ -6,22 +6,26 @@ import { DeleteIcon } from "@chakra-ui/icons";
 import Counter from "../Components/Products/Counter";
 
 function Cart() {
-  const { cartProduct, setCartProduct } = useContext(CartContext);
+  const { cartProduct, setCartProduct, handleCartCount } =
+    useContext(CartContext);
 
-  let tprice = 0;
+  let price = 0;
   for (let p of cartProduct) {
-    tprice += p.price;
+    price += p.price;
   }
 
-  const [tPrice, setTprice] = useState(tprice);
+  const [tPrice, setTprice] = useState(price);
 
   const handleRemove = (id) => {
     const cProducts = cartProduct.filter((el) => el.id !== id);
+    const p = cartProduct.filter((el) => el.id === id);
     setCartProduct(cProducts);
+    handleCartCount(-1);
+    setTprice(tPrice - p[0].price);
   };
 
   const handlePrice = (val) => {
-    setTprice(val);
+    setTprice(tPrice + val);
   };
 
   return (

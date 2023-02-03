@@ -40,7 +40,6 @@ function Products() {
     const btn = document.getElementById("btn" + i);
     btn.disabled = true;
     e.target.childNodes[0].data = "Added";
-    console.log(p);
     handleCartProduct(p);
   };
 

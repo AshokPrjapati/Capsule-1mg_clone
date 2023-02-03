@@ -24,7 +24,7 @@ function SingleProduct() {
     const btn = document.getElementById("btn" + i);
     btn.disabled = true;
     e.target.childNodes[0].data = "Added";
-    handleCartProduct({ p });
+    handleCartProduct(p);
   };
 
   useEffect(() => {

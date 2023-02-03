@@ -273,7 +273,7 @@ function Category() {
                 >
                   {navItem.children.map((child, i) => (
                     <SimpleGrid column={2} key={i}>
-                      <DesktopSubNav {...child} />
+                      <DesktopSubNav key={i} {...child} />
                     </SimpleGrid>
                   ))}
                 </PopoverContent>
@@ -309,7 +309,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
         </NavLink>
         {subLabel.length
           ? subLabel.map((sl, i) => (
-              <NavLink to={href}>
+              <NavLink key={i} to={href}>
                 <Link
                   role={"group"}
                   display={"block"}

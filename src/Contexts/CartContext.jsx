@@ -20,7 +20,7 @@ function CartContextProvider({ children }) {
     setCartCount(cartCount + val);
   };
 
-  const handleCartProduct = ({ p }) => {
+  const handleCartProduct = (p) => {
     console.log(p);
     setCartProduct([...cartProduct, p]);
   };

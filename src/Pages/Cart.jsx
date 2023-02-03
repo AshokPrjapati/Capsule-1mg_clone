@@ -9,6 +9,8 @@ function Cart() {
   const { cartProduct, setCartProduct, handleCartCount } =
     useContext(CartContext);
 
+  console.log(cartProduct);
+
   let price = 0;
   for (let p of cartProduct) {
     price += p.price;

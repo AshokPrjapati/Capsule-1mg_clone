@@ -14,6 +14,7 @@ function MainCarousel() {
           showIndicators={false}
           statusFormatter={false}
           width="100%"
+          infiniteLoop
         >
           <Box>
             <Image

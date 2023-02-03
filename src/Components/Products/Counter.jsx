@@ -1,7 +1,7 @@
 import { Button, Flex, Heading, Stack, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 
-function Counter({ price, sPrice }) {
+function Counter({ price, sPrice, handlePrice }) {
   const [counter, setCounter] = useState(1);
   const [tPrice, setTPrice] = useState(price);
 
@@ -12,6 +12,7 @@ function Counter({ price, sPrice }) {
   const handleCounter = (val) => {
     setCounter(counter + val);
   };
+
   return (
     <Stack textAlign={"right"}>
       <Heading color="grey" fontSize={"15px"} fontWeight={600}>
@@ -42,7 +43,10 @@ function Counter({ price, sPrice }) {
           p={1}
           _hover={{}}
           disabled={counter === 1}
-          onClick={() => handleCounter(-1)}
+          onClick={() => {
+            handleCounter(-1);
+            handlePrice(-price);
+          }}
         >
           -
         </Button>
@@ -56,7 +60,10 @@ function Counter({ price, sPrice }) {
           p={1}
           fontWeight={700}
           _hover={{}}
-          onClick={() => handleCounter(1)}
+          onClick={() => {
+            handleCounter(1);
+            handlePrice(price);
+          }}
         >
           +
         </Button>

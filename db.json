@@ -1,22 +1,13 @@
 {
   "users": [
     {
-      "ftitle": "Ashok",
-      "ltitle": "Kumar",
-      "email": "ap271449@gmail.com",
-      "gender": "Male",
-      "password": "1234",
-      "mobileNumber": "9079059893",
-      "id": 1
-    },
-    {
       "fName": "Ashok",
       "lName": "Kumar",
-      "email": "ap241449@gmail.com",
+      "email": "bhattagarya123@php.com",
       "gender": "Male",
-      "password": "1234",
+      "password": "123456789",
       "mobileNumber": "9799191449",
-      "id": 2
+      "id": 1
     }
   ],
   "products": [

@@ -11,6 +11,7 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const CAT_ITEMS = [
   {
@@ -19,12 +20,12 @@ const CAT_ITEMS = [
       {
         label: "All disease",
         subLabel: [],
-        href: "category/disease",
+        href: "/category/disease",
       },
       {
         label: "All Medicines",
         subLabel: [],
-        href: "category/medicine",
+        href: "/category/medicine",
       },
       {
         label: "Medicines by Therapeutic Class",
@@ -245,18 +246,20 @@ function Category() {
           <Box key={navItem.label}>
             <Popover trigger={"hover"} placement={"bottom-start"}>
               <PopoverTrigger>
-                <Link
-                  p={2}
-                  href={navItem.href ?? "#"}
-                  fontSize={"sm"}
-                  color={linkColor}
-                  _hover={{
-                    textDecoration: "none",
-                    color: linkHoverColor,
-                  }}
-                >
-                  {navItem.label}
-                </Link>
+                <NavLink to={navItem.href}>
+                  <Text
+                    p={2}
+                    href={navItem.href ?? "#"}
+                    fontSize={"sm"}
+                    color={linkColor}
+                    _hover={{
+                      textDecoration: "none",
+                      color: linkHoverColor,
+                    }}
+                  >
+                    {navItem.label}
+                  </Text>
+                </NavLink>
               </PopoverTrigger>
 
               {navItem.children && (
@@ -287,39 +290,41 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
     <Flex fontSize="14px">
       <Box width={"max-content"}>
-        <Link
-          href={href}
-          role={"group"}
-          display={"block"}
-          p={2}
-          rounded={"md"}
-          _hover={{
-            textDecoration: "none",
-            color: "#ff6f61",
-          }}
-          textAlign="left"
-        >
-          <Text transition={"all .3s ease"} fontWeight="700">
-            {label}
-          </Text>
-        </Link>
+        <NavLink to={href}>
+          <Link
+            role={"group"}
+            display={"block"}
+            p={2}
+            rounded={"md"}
+            _hover={{
+              textDecoration: "none",
+              color: "#ff6f61",
+            }}
+            textAlign="left"
+          >
+            <Text transition={"all .3s ease"} fontWeight="700">
+              {label}
+            </Text>
+          </Link>
+        </NavLink>
         {subLabel.length
           ? subLabel.map((sl, i) => (
-              <Link
-                href={href}
-                role={"group"}
-                display={"block"}
-                p={2}
-                rounded={"md"}
-                _hover={{
-                  textDecoration: "none",
-                  color: "#ff6f61",
-                }}
-                textAlign="left"
-                key={i}
-              >
-                <Text fontSize={"sm"}>{sl}</Text>
-              </Link>
+              <NavLink to={href}>
+                <Link
+                  role={"group"}
+                  display={"block"}
+                  p={2}
+                  rounded={"md"}
+                  _hover={{
+                    textDecoration: "none",
+                    color: "#ff6f61",
+                  }}
+                  textAlign="left"
+                  key={i}
+                >
+                  <Text fontSize={"sm"}>{sl}</Text>
+                </Link>
+              </NavLink>
             ))
           : null}
       </Box>

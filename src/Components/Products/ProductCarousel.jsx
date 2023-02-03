@@ -1,6 +1,5 @@
 import { Flex, Spacer, Stack, Text, Button, Box } from "@chakra-ui/react";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { CarouselData } from "../API";
@@ -8,23 +7,23 @@ import CarouselCard from "./CarouselCard";
 
 function ProductCarousel({ category }) {
   const [data, setData] = useState([]);
+  const sliderRef = useRef(null);
 
   useEffect(() => {
     CarouselData({ category }).then((res) => {
       setData(res.data);
     });
-  }, []);
+  }, [category]);
 
-  const slider = document.getElementById("slider");
+  // const slider = document.getElementById("slider");
   const handlePrev = () => {
-    let w = slider.clientWidth;
-    slider.scrollLeft = slider.scrollLeft - w;
+    let w = sliderRef.current.clientWidth;
+    sliderRef.current.scrollLeft -= w;
   };
 
-  const handleNext = (e) => {
-    let w = slider.clientWidth;
-    slider.scrollRight = slider.scrollRight - w;
-    console.log(e);
+  const handleNext = () => {
+    let w = sliderRef.current.clientWidth;
+    sliderRef.current.scrollLeft += w;
   };
 
   return (
@@ -40,7 +39,7 @@ function ProductCarousel({ category }) {
       </Flex>
       <Box position="relative" overflow={"hidden"} shadow={"lg"}>
         <Button
-          display={"none"}
+          // display={"none"}
           zIndex={10}
           w="70px"
           h={"70px"}
@@ -69,6 +68,7 @@ function ProductCarousel({ category }) {
           <FaAngleRight fontSize={"40px"} color={"#ff6f61"} />
         </Button>
         <Flex
+          ref={sliderRef}
           p={4}
           id="slider"
           textAlign="left"

@@ -42,10 +42,19 @@ function Category() {
   };
 
   return (
-    <Flex gap={4} mt="40px">
+    <Flex
+      gap={4}
+      pt="40px"
+      bg={"#f6f6f6"}
+      flexDir={{ base: "column", lg: "row" }}
+    >
       <Filter handleSort={handleSort} />
-      <Box width={"72%"} m={"auto"}>
-        <Grid templateColumns={"repeat(4, 1fr)"} gap="20px 20px" p={3}>
+      <Box width={{ base: "100%", lg: "72%" }} m={{ base: 0, lg: "auto" }}>
+        <Grid
+          templateColumns={{ base: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }}
+          gap="20px 20px"
+          p={3}
+        >
           {data.map((p) => (
             <GridItem
               key={p.title}

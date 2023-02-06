@@ -41,8 +41,8 @@ function ProductCarousel({ category }) {
         <Button
           // display={"none"}
           zIndex={10}
-          w="70px"
-          h={"70px"}
+          w="50px"
+          h={"50px"}
           position={"absolute"}
           rounded={"50%"}
           shadow={"dark-lg"}
@@ -55,8 +55,8 @@ function ProductCarousel({ category }) {
         </Button>
         <Button
           zIndex={10}
-          w="70px"
-          h={"70px"}
+          w="50px"
+          h={"50px"}
           position={"absolute"}
           rounded={"50%"}
           shadow={"dark-lg"}

@@ -5,7 +5,6 @@ import {
   AlertTitle,
   Modal,
   ModalContent,
-  ModalFooter,
   ModalOverlay,
   Button,
   CloseButton,

@@ -17,7 +17,6 @@ import {
   Avatar,
 } from "@chakra-ui/react";
 
-import styles from "./Navbar.module.css";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link as RouterLink, NavLink } from "react-router-dom";
 
@@ -178,7 +177,6 @@ export default function WithSubnavigation() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "#ff6f61");
   const linkHoverColor = useColorModeValue("#ff6f61", "white");
   // const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
@@ -213,15 +211,7 @@ const DesktopNav = () => {
 const MobileNav = () => {
   const { isReg, userData, handleIsReg, handleUser } = useContext(AuthContext);
   return (
-    <Stack
-      p={4}
-      display={{ md: "none" }}
-      h={"100vh"}
-      position="fixed"
-      zIndex={10}
-      bg="#fff"
-      pointerEvents={"none"}
-    >
+    <Stack p={4} display={{ md: "none" }} bg="#fff">
       {isReg ? (
         <Flex
           rounded={"full"}

@@ -34,9 +34,14 @@ function SingleProduct() {
   }, []);
 
   return (
-    <Stack direction={"row"} maxW="80%" m={" 40px auto"}>
-      <Flex maxW={"70%"} gap={3} m="auto">
-        <Box minW={"40%"} align="right">
+    <Stack
+      direction={{ base: "column", lg: "row" }}
+      maxW="80%"
+      m={"40px auto"}
+      gap={{ base: "40px", lg: 0 }}
+    >
+      <Flex gap={3} m="auto" flexDir={{ base: "column", lg: "row" }}>
+        <Box minW={"40%"} align={{ base: "center", lg: "right" }}>
           <Image src={data.src} height={"300px"} />
         </Box>
         <Box textAlign={"left"} p={"0 15px"}>

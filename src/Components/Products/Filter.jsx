@@ -5,25 +5,17 @@ import styles from "./ProductCarousel.module.css";
 function Filter({ handleSort }) {
   return (
     <Box
-      w={"20%"}
-      flexShrink={0}
-      ml="20px"
+      w={{ base: "100%", lg: "20%" }}
+      flexShrink={{ base: 1, lg: 0 }}
+      ml={{ base: 0, lg: "20px" }}
       mt="10px"
       p={4}
-      maxH={"100vh"}
+      maxH={{ base: "max-content", lg: "100vh" }}
       textAlign="left"
       className={styles.shadow}
       bg="#fff"
     >
       <Stack gap={2}>
-        {/* <Heading fontSize={"20px"}>Category</Heading>
-          <Select onChange={handleCategory}>
-            <option value="">All Products</option>
-            <option value="/vitamins-suppliments">Vitamins Suppliments</option>
-            <option value="/medicine">Medicine</option>
-            <option value="/combo">Combo Offer</option>
-          </Select>
-          <Divider /> */}
         <Heading fontSize={"20px"}>Price</Heading>
         <Select
           onChange={(e) => handleSort(`_sort=price&_order=${e.target.value}`)}

@@ -32,7 +32,6 @@ function Products() {
 
   const handleSort = (val) => {
     setSort(val);
-    console.log(val);
   };
 
   const handleAdd = (e, i, p) => {

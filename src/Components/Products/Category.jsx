@@ -38,7 +38,6 @@ function Category() {
 
   const handleSort = (val) => {
     setSort(val);
-    console.log(val);
   };
 
   return (

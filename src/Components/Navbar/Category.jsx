@@ -20,12 +20,12 @@ const CAT_ITEMS = [
       {
         label: "All disease",
         subLabel: [],
-        href: "/category/disease",
+        href: "/products/disease",
       },
       {
         label: "All Medicines",
         subLabel: [],
-        href: "/category/medicine",
+        href: "/products/medicine",
       },
       {
         label: "Medicines by Therapeutic Class",
@@ -45,7 +45,7 @@ const CAT_ITEMS = [
           "Minerals-Supplement",
           "Vitamin B-12 & B-Complex",
         ],
-        href: "#",
+        href: "products/vitamins-suppliments ",
       },
       {
         label: "Nutritional Drinks",

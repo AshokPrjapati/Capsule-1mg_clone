@@ -13,15 +13,15 @@ export const fetchUser = () => {
     return axios.get(`${api}/users`);
 };
 
-export const fetchProduct = ({ limit, sort, page }) => {
+export const fetchProduct = ({ category, limit, sort, page }) => {
     return axios
         .get(
-            `${api}/products?_page=${page}&_limit=${limit}&${sort}`
+            `${api}/${category}?_page=${page}&_limit=${limit}&${sort}`
         )
 }
 
-export const fetchSingleProduct = ({ id }) => {
-    return axios.get(`${api}/products/${id}`);
+export const fetchSingleProduct = ({ category, id }) => {
+    return axios.get(`${api}/${category}/${id}`);
 }
 
 export const CarouselData = ({ category }) => {

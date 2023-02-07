@@ -1,4 +1,4 @@
-import { Box, Flex, Grid } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Skeleton } from "@chakra-ui/react";
 
 import React, { useEffect, useState, useContext } from "react";
 import Pagination from "../Components/Products/Pagination";
@@ -8,23 +8,25 @@ import ProductCard from "../Components/Products/ProductCard";
 
 import Filter from "../Components/Products/Filter";
 import { fetchProduct } from "../Components/API";
+import { useParams } from "react-router-dom";
 
 function Products() {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(12);
   const [sort, setSort] = useState("");
+  const { category } = useParams();
 
   const { handleCartCount, handleCartProduct } = useContext(CartContext);
 
   let limit = 12;
 
   useEffect(() => {
-    fetchProduct({ page, limit, sort }).then((res) => {
+    fetchProduct({ category, page, limit, sort }).then((res) => {
       setTotal(res.headers["x-total-count"]);
       setData(res.data);
     });
-  }, [page, limit, sort]);
+  }, [page, limit, sort, category]);
 
   const handlePage = (val) => {
     setPage(val);
@@ -42,6 +44,8 @@ function Products() {
     handleCartProduct(p);
   };
 
+  let d = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
   return (
     <Flex
       gap={4}
@@ -56,14 +60,32 @@ function Products() {
           gap="20px 20px"
           p={3}
         >
-          {data.map((p) => (
-            <ProductCard
-              key={p.id}
-              id={p.id}
-              p={{ ...p }}
-              handleAdd={handleAdd}
-            />
-          ))}
+          {data.length
+            ? data.map((p) => (
+                <ProductCard
+                  key={p.id}
+                  id={p.id}
+                  p={{ ...p }}
+                  category={category}
+                  handleAdd={handleAdd}
+                />
+              ))
+            : d.map((el) => (
+                <GridItem
+                  key={el}
+                  w="100%"
+                  padding={4}
+                  textAlign="left"
+                  bg="#fff"
+                >
+                  <Skeleton
+                    w="100%"
+                    startColor="#ff6f61"
+                    endColor="#af4f61"
+                    height="300px"
+                  />
+                </GridItem>
+              ))}
         </Grid>
         <Pagination
           page={page}

@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import styles from "./ProductCarousel.module.css";
 import { BsStarFill } from "react-icons/bs";
 
-function ProductCard({ handleAdd, id, p }) {
+function ProductCard({ category, handleAdd, id, p }) {
   return (
     <GridItem
       w="100%"
@@ -21,7 +21,7 @@ function ProductCard({ handleAdd, id, p }) {
       textAlign="left"
       bg="#fff"
     >
-      <Link to={`/products/${p.id}`}>
+      <Link to={`/products/${category}/${p.id}`}>
         <Box maxW={"100%"} h={"150px"} mb={"10px"} align={"center"}>
           <Image h="100%" src={p.src} />
         </Box>
@@ -31,6 +31,7 @@ function ProductCard({ handleAdd, id, p }) {
           fontSize={"15px"}
           mb={"10px"}
           fontWeight={600}
+          textAlign="center"
         >
           {p.title}
         </Text>
@@ -41,24 +42,31 @@ function ProductCard({ handleAdd, id, p }) {
           mb={"10px"}
           fontWeight={600}
         >
-          {p.packsize}
+          {p.packsize ? p.packsize : null}
         </Text>
-        <Flex gap={"20px"}>
-          <Button
-            bg="#1aab2a"
-            size={"xs"}
-            color={"#fff"}
-            fontSize={"13px"}
-            mb={"10px"}
-            fontWeight={600}
-            _hover={{}}
-          >
-            {p.rating} <BsStarFill />
-          </Button>
-          <Text fontSize={"13px"} mb={"10px"} color="#ff6f61" fontWeight={600}>
-            {p.CardRatingDetail}
-          </Text>
-        </Flex>
+        {p.rating ? (
+          <Flex gap={"20px"}>
+            <Button
+              bg="#1aab2a"
+              size={"xs"}
+              color={"#fff"}
+              fontSize={"13px"}
+              mb={"10px"}
+              fontWeight={600}
+              _hover={{}}
+            >
+              {p.rating} <BsStarFill />
+            </Button>
+            <Text
+              fontSize={"13px"}
+              mb={"10px"}
+              color="#ff6f61"
+              fontWeight={600}
+            >
+              {p.CardRatingDetail}
+            </Text>
+          </Flex>
+        ) : null}
         <Flex gap={"10px"}>
           <Text
             className={styles.text}
@@ -100,7 +108,7 @@ function ProductCard({ handleAdd, id, p }) {
           _hover={{ bg: "#ff6f61", color: "#fff" }}
           onClick={(e) => handleAdd(e, id, p)}
         >
-          Add
+          {category === "disease" ? null : "Add"}
         </Button>
       </Flex>
     </GridItem>

@@ -8,14 +8,11 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import { BsStarFill } from "react-icons/bs";
-
-import { useParams } from "react-router-dom";
 import React, { useEffect, useState, useContext } from "react";
 import { CartContext } from "../Contexts/CartContext";
 import { fetchSingleProduct } from "../Components/API";
 
 function SingleProduct() {
-  const { id } = useParams();
   const [data, setData] = useState({});
   const { handleCartCount, handleCartProduct } = useContext(CartContext);
 
@@ -27,8 +24,12 @@ function SingleProduct() {
     handleCartProduct(p);
   };
 
+  let path = window.location.pathname.split("/");
+  let category = path[path.length - 2];
+  let id = path[path.length - 1];
+
   useEffect(() => {
-    fetchSingleProduct({ id }).then((res) => {
+    fetchSingleProduct({ category, id }).then((res) => {
       setData({ ...data, ...res.data });
     });
   }, []);

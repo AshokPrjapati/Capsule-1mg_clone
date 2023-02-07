@@ -1,4 +1,13 @@
-import { Flex, Spacer, Stack, Text, Button, Box } from "@chakra-ui/react";
+import {
+  Flex,
+  Spacer,
+  Stack,
+  Text,
+  Button,
+  Box,
+  Skeleton,
+  GridItem,
+} from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -34,7 +43,7 @@ function ProductCarousel({ category }) {
         </Text>
         <Spacer />
         <Button size={"sm"} bg="#ff6f61" _hover={{ bg: "#ff4f61" }} mr={"20px"}>
-          <Link to={`category/${category}`}>See All</Link>
+          <Link to={`products/${category}`}>See All</Link>
         </Button>
       </Flex>
       <Box position="relative" overflow={"hidden"} shadow={"lg"}>
@@ -76,9 +85,20 @@ function ProductCarousel({ category }) {
           gap="20px"
           scrollBehavior={"smooth"}
         >
-          {data.map((p) => (
-            <CarouselCard key={p.title} p={{ ...p }} />
-          ))}
+          {data.length
+            ? data.map((p) => (
+                <CarouselCard key={p.title} p={{ ...p }} category={category} />
+              ))
+            : [1, 2, 3, 4, 5, 6, 7, 8].map((el) => (
+                <GridItem key={el} w="100%" padding={4} textAlign="left">
+                  <Skeleton
+                    w="100%"
+                    startColor="#ff6f61"
+                    endColor="#af4f61"
+                    height="300px"
+                  />
+                </GridItem>
+              ))}
         </Flex>
       </Box>
     </Stack>

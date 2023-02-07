@@ -1,18 +1,10 @@
-import {
-  Flex,
-  Spacer,
-  Stack,
-  Text,
-  Button,
-  Box,
-  Skeleton,
-  GridItem,
-} from "@chakra-ui/react";
+import { Flex, Spacer, Stack, Text, Button, Box } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { CarouselData } from "../API";
 import CarouselCard from "./CarouselCard";
+import Load from "./Load";
 
 function ProductCarousel({ category }) {
   const [data, setData] = useState([]);
@@ -89,16 +81,7 @@ function ProductCarousel({ category }) {
             ? data.map((p) => (
                 <CarouselCard key={p.title} p={{ ...p }} category={category} />
               ))
-            : [1, 2, 3, 4, 5, 6, 7, 8].map((el) => (
-                <GridItem key={el} w="100%" padding={4} textAlign="left">
-                  <Skeleton
-                    w="100%"
-                    startColor="#ff6f61"
-                    endColor="#af4f61"
-                    height="300px"
-                  />
-                </GridItem>
-              ))}
+            : [1, 2, 3, 4, 5, 6, 7, 8].map((el) => <Load key={el} />)}
         </Flex>
       </Box>
     </Stack>

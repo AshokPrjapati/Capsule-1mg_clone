@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Skeleton } from "@chakra-ui/react";
+import { Box, Flex, Grid } from "@chakra-ui/react";
 
 import React, { useEffect, useState, useContext } from "react";
 import Pagination from "../Components/Products/Pagination";
@@ -9,6 +9,7 @@ import ProductCard from "../Components/Products/ProductCard";
 import Filter from "../Components/Products/Filter";
 import { fetchProduct } from "../Components/API";
 import { useParams } from "react-router-dom";
+import Load from "../Components/Products/Load";
 
 function Products() {
   const [data, setData] = useState([]);
@@ -70,22 +71,7 @@ function Products() {
                   handleAdd={handleAdd}
                 />
               ))
-            : d.map((el) => (
-                <GridItem
-                  key={el}
-                  w="100%"
-                  padding={4}
-                  textAlign="left"
-                  bg="#fff"
-                >
-                  <Skeleton
-                    w="100%"
-                    startColor="#ff6f61"
-                    endColor="#af4f61"
-                    height="300px"
-                  />
-                </GridItem>
-              ))}
+            : d.map((el) => <Load key={el} />)}
         </Grid>
         <Pagination
           page={page}

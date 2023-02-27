@@ -95,7 +95,29 @@ export default function WithSubnavigation() {
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Heading align={"left"} color="#000" fontSize="25px">
-            <NavLink to="/">Capsule</NavLink>
+            <Flex
+              as={NavLink}
+              to="/"
+              letterSpacing="1px"
+              cursor={"pointer"}
+              fontFamily={"Michroma"}
+              h="100%"
+              alignItems="center"
+            >
+              <Text as="span">C</Text>
+              <Text as="span" color={"#ff6f61"}>
+                A
+              </Text>
+              <Text as="span">P</Text>
+              <Text as="span">S</Text>
+              <Text as="span" color={"#ff6f61"}>
+                U
+              </Text>
+              <Text as="span">L</Text>
+              <Text as="span" color={"#ff6f61"}>
+                E
+              </Text>
+            </Flex>
           </Heading>
 
           <Flex

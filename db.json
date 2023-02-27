@@ -3,20 +3,13 @@
     {
       "fName": "Ashok",
       "lName": "Kumar",
-      "email": "bhattagarya123@php.com",
+      "email": "ap271449@gmail.com",
       "gender": "Male",
       "password": "123456789",
       "mobileNumber": "9799191449",
+      "cart": [],
+      "order": [],
       "id": 1
-    },
-    {
-      "fName": "Ashok",
-      "lName": "Kumar",
-      "email": "bhattagarya123@php.com",
-      "gender": "Male",
-      "password": "ashok123",
-      "mobileNumber": "9799191449",
-      "id": 2
     }
   ],
   "all": [

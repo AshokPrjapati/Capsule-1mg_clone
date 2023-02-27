@@ -25,44 +25,7 @@ import { AuthContext } from "../../Contexts/AuthContext";
 import { useContext } from "react";
 import UserCard from "../Auth/UserCard";
 import { CartContext } from "../../Contexts/CartContext";
-
-const NAV_ITEMS = [
-  {
-    label: "MEDICINE",
-    href: "products/medicine",
-  },
-  {
-    label: "LEB TESTS",
-    href: "#",
-  },
-  {
-    label: "ALL PRODUCTS",
-    href: "/products/all",
-  },
-  {
-    label: "COVID-19",
-    href: "#",
-  },
-  {
-    label: "AYURVEDA",
-    href: "#",
-  },
-  {
-    label: "CARE PLAN",
-    href: "#",
-  },
-];
-
-const AUTH_ITEMS = [
-  {
-    label: "Login",
-    href: "/login",
-  },
-  {
-    label: "Signup",
-    href: "/signup",
-  },
-];
+import { NAV_ITEMS, AUTH_ITEMS } from "./NavConstants";
 
 export default function WithSubnavigation() {
   const { cartCount } = useContext(CartContext);

@@ -25,33 +25,7 @@ import { AuthContext } from "../../Contexts/AuthContext";
 import { useContext } from "react";
 import UserCard from "../Auth/UserCard";
 import { CartContext } from "../../Contexts/CartContext";
-
-const NAV_ITEMS = [
-  {
-    label: "MEDICINE",
-    href: "products/medicine",
-  },
-  {
-    label: "LEB TESTS",
-    href: "#",
-  },
-  {
-    label: "ALL PRODUCTS",
-    href: "/products/all",
-  },
-  {
-    label: "COVID-19",
-    href: "#",
-  },
-  {
-    label: "AYURVEDA",
-    href: "#",
-  },
-  {
-    label: "CARE PLAN",
-    href: "#",
-  },
-];
+import NAV_ITEMS from "../../Constants/NavLinks";
 
 const AUTH_ITEMS = [
   {

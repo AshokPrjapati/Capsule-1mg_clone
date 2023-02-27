@@ -25,4 +25,15 @@ const NAV_ITEMS = [
     },
 ];
 
-export default NAV_ITEMS
+const AUTH_ITEMS = [
+    {
+        label: "Login",
+        href: "/login",
+    },
+    {
+        label: "Signup",
+        href: "/signup",
+    },
+];
+
+export { NAV_ITEMS, AUTH_ITEMS }

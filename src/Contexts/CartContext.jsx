@@ -21,9 +21,14 @@ function CartContextProvider({ children }) {
   };
 
   const handleCartProduct = (p) => {
-    console.log(p);
+    p.quantity = 1;
     setCartProduct([...cartProduct, p]);
   };
+
+  const removeCartItem = (id) => {
+    const cProducts = cartProduct.filter((el) => el.id !== id);
+    setCartProduct(cProducts);
+  }
 
   return (
     <CartContext.Provider
@@ -33,6 +38,7 @@ function CartContextProvider({ children }) {
         setCartProduct,
         cartProduct,
         cartCount,
+        removeCartItem
       }}
     >
       {children}

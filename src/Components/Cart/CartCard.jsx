@@ -59,13 +59,10 @@ function CartCard({ product, handleRemove }) {
                     Remove
                 </Button>
             </Stack>
-            <Stack>
-
-                <Box fontSize={"13px"}>
-                    MRP
-                    <Heading ml={2} color="grey" fontSize={"15px"} fontWeight={600} as={"span"}>₹{product.price}</Heading>
-                </Box>
-
+            <Stack textAlign={"right"}>
+                <Heading ml={2} color="grey" fontSize={"15px"} fontWeight={600} >
+                    ₹{product.price}
+                </Heading>
                 <QuantityCounter
                     handleQuantity={handleQuantity}
                     quantity={quantity}

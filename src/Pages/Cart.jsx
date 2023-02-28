@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { CartContext } from "../Contexts/CartContext";
 import { useContext } from "react";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import CartCard from "../Components/Cart/CartCard";
 import EmptyCartPage from "../Components/Cart/EmptyCartPage";
+import CartSummary from "../Components/Cart/CartSummary";
 
 function Cart() {
   const { cartProduct, removeCartItem } = useContext(CartContext);
@@ -25,14 +26,16 @@ function Cart() {
   return (
     <>
       {
-        cartProduct.length ? <Flex w={"80%"} p={"20px"} m="20px auto" gap={4}>
-          <Box>
+        cartProduct.length ? <Container border="1px" maxW="6xl" p={"20px"} m="20px auto" display="flex" gap={4}>
+          <Box w="60%" border="1px solid red">
             {cartProduct.map((p) => (
               <CartCard key={p.id} product={p} handleRemove={handleRemove} />
             ))}
           </Box>
-          <Box w={"40%"}>{totalPrice}</Box>
-        </Flex> : <EmptyCartPage />
+          <Box w={"40%"} border="1px solid blue">
+            <CartSummary price={totalPrice} setPrice={setTotalprice} />
+          </Box>
+        </Container> : <EmptyCartPage />
       }
     </>
   );

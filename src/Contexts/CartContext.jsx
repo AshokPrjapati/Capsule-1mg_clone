@@ -11,7 +11,6 @@ function CartContextProvider({ children }) {
   const [cartProduct, setCartProduct] = useState(cProduct);
   const toast = useToast();
   const user = JSON.parse(localStorage.getItem("user")) || {};
-  let regStatus = JSON.parse(localStorage.getItem("regStatus")) || false;
 
   useEffect(() => {
     localStorage.setItem("cartCount", JSON.stringify(cartCount));
@@ -19,17 +18,10 @@ function CartContextProvider({ children }) {
 
   useEffect(() => {
     localStorage.setItem("cartProduct", JSON.stringify(cartProduct));
-    updateCart(user.id, cartProduct);
   }, [cartProduct]);
 
 
   const handleCartProduct = async (p) => {
-    // checking authentication before adding product to cart
-    if (!regStatus) {
-      toast({
-        title: 'Please Login/signup to add product to cart', position: 'bottom-left', status: 'error', duration: 3000, isClosable: true,
-      });
-    }
 
     // is product already exists
     const isAlreadyExist = cartProduct.filter((product) => p.id === product.id);

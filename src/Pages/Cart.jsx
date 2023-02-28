@@ -3,18 +3,19 @@ import { CartContext } from "../Contexts/CartContext";
 import { useContext } from "react";
 import { Box, Flex } from "@chakra-ui/react";
 import CartCard from "../Components/Cart/CartCard";
+import { fetchUser } from "../Components/API";
 
 function Cart() {
-  const { cartProduct, removeCartItem } = useContext(CartContext);
+  const { cartProduct, removeCartItem, setCartProduct } = useContext(CartContext);
   const [totalPrice, setTotalprice] = useState(0);
 
   let price = 0;
-  for (let p of cartProduct) price += p.quantity * p.price;
+  if (cartProduct.length) for (let p of cartProduct) price += p.quantity * p.price;
+
 
   useEffect(() => {
     setTotalprice(price.toFixed(2));
   }, [cartProduct]);
-
 
   const handleRemove = (id) => {
     removeCartItem(id);

@@ -195,6 +195,7 @@ const DesktopNav = () => {
 
 const MobileNav = () => {
   const { isReg, userData, handleIsReg, handleUser } = useContext(AuthContext);
+  const { setCartProduct } = useContext(CartContext);
   return (
     <Stack p={4} display={{ md: "none" }} bg="#fff">
       {isReg ? (
@@ -231,6 +232,7 @@ const MobileNav = () => {
             onClick={() => {
               handleIsReg(false);
               handleUser({});
+              setCartProduct([]);
             }}
           >
             LogOut

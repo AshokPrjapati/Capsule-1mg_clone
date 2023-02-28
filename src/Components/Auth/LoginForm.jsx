@@ -1,5 +1,4 @@
 import {
-  Link,
   Text,
   Stack,
   Heading,
@@ -17,9 +16,12 @@ import { fetchUser } from "../API";
 
 import { AuthContext } from "../../Contexts/AuthContext";
 import SucessAlert from "../Utils/SucessAlert";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../Contexts/CartContext";
 
 function LoginForm() {
   const { handleIsReg, handleUser } = useContext(AuthContext);
+  const { setCartProduct } = useContext(CartContext);
   const [loading, setLoading] = useState(false);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -53,10 +55,10 @@ function LoginForm() {
             user.password === loginData.password
           ) {
             flag = 1;
-
             setLoginData({ email: "", password: "" });
             handleIsReg(true);
             handleUser({ ...user });
+            if (user.cart) setCartProduct(user.cart);
             setLoading(false);
             onOpen();
             break;
@@ -114,7 +116,7 @@ function LoginForm() {
               justify={"space-between"}
             >
               <Checkbox>Remember me</Checkbox>
-              <Link color={"#ff6f61"}>Forgot password?</Link>
+              <Text as={Link} to="#" color={"#ff6f61"}>Forgot password?</Text>
             </Stack>
             <Button
               isLoading={loading}
@@ -136,9 +138,9 @@ function LoginForm() {
 
       <Text align={"center"} color="grey" pt={3}>
         Don't have an account ?{" "}
-        <Link color={"#ff6f61"} fontWeight="700" href="/signup">
+        <Text as={Link} to="/signup" color={"#ff6f61"} fontWeight="700">
           Signup
-        </Link>
+        </Text>
       </Text>
       <Text align={"center"} color="grey" fontSize={"12px"}>
         By login, you agree to our Terms and Conditions & Privacy Policy

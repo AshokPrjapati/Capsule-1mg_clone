@@ -8,32 +8,7 @@
       "password": "12345678",
       "mobileNumber": "",
       "id": 1,
-      "cart": [
-        {
-          "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/0fa72f2c-072d-4c6a-bc52-446edab403a4/tata-1mg-salmon-omega-3-fish-oil-capsule.jpeg",
-          "title": "Tata 1mg Salmon Omega 3 Fish Oil Capsule",
-          "packsize": "bottle of 60 capsules",
-          "rating": "4.4",
-          "CardRatingDetail": "1506 ratings",
-          "strike-price": "995",
-          "discount-percent": "47% off",
-          "price": 524,
-          "id": 1,
-          "quantity": 2
-        },
-        {
-          "src": "https://onemg.gumlet.io/images/f_auto,w_150,h_150,c_fit,q_auto/kqupivjrbrq0ctcywfcs/nicotex-sugar-free-mint-plus-chewing-gums.jpg",
-          "title": "Nicotex Sugar Free Mint Plus Chewing Gums",
-          "packsize": "Tin of 25 chewing gums",
-          "rating": "4.1",
-          "CardRatingDetail": "275 ratings",
-          "strike-price": "245",
-          "discount-percent": "16% off",
-          "price": 206,
-          "id": 7,
-          "quantity": 2
-        }
-      ]
+      "cart": []
     }
   ],
   "all": [

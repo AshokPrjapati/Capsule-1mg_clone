@@ -24,6 +24,7 @@ import SucessAlert from "../Utils/SucessAlert";
 import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../Contexts/AuthContext";
+import { CartContext } from "../../Contexts/CartContext";
 
 function MobileAuthForm({ handleNumber, mobileNumber }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -99,6 +100,7 @@ function UserAuthForm({ mobileNumber }) {
   const [userData, setUserData] = useState(intialData);
   const [showPassword, setShowPassword] = useState(false);
   const [loader, setLoader] = useState(false);
+  const [setCartProduct] = useContext(CartContext);
 
   const handleChange = (event) => {
     setUserData({
@@ -115,7 +117,7 @@ function UserAuthForm({ mobileNumber }) {
       .then((res) => {
         onOpen();
         handleIsReg(true);
-        handleUser({ ...userData });
+        handleUser(res.data);
         setLoader(false);
       })
       .catch((er) => {

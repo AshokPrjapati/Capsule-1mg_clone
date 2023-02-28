@@ -15,9 +15,11 @@ import {
 import React, { useContext } from "react";
 
 import { AuthContext } from "../../Contexts/AuthContext";
+import { CartContext } from "../../Contexts/CartContext";
 
 function UserCard() {
   const { handleIsReg, userData, handleUser } = useContext(AuthContext);
+  const { setCartProduct } = useContext(CartContext);
   return (
     <Box display={{ base: "none", md: "none", lg: "flex" }}>
       <Menu>
@@ -76,6 +78,7 @@ function UserCard() {
             onClick={() => {
               handleIsReg(false);
               handleUser({});
+              setCartProduct([]);
             }}
           >
             Logout

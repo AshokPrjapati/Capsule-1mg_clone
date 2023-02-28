@@ -17,8 +17,7 @@ export const fetchUser = () => {
 
 // updating the cart products in db
 export const updateCart = (id, cartProducts) => {
-    console.log(id, cartProducts)
-    return axios.patch(`/users/${id}`, { "cart": [...cartProducts] });
+    return axios.patch(`/users/${id}`, { cart: [...cartProducts] });
 }
 
 export const fetchProduct = ({ category, limit, sort, page }) => {

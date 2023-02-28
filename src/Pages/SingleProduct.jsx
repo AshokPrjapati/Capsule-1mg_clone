@@ -6,21 +6,26 @@ import {
   Flex,
   Button,
   Heading,
+  useToast,
 } from "@chakra-ui/react";
 import { BsStarFill } from "react-icons/bs";
 import React, { useEffect, useState, useContext } from "react";
 import { CartContext } from "../Contexts/CartContext";
 import { fetchSingleProduct } from "../Components/API";
+import { AuthContext } from "../Contexts/AuthContext";
 
 function SingleProduct() {
   const [data, setData] = useState({});
   const { handleCartProduct } = useContext(CartContext);
+  const { isReg } = useContext(AuthContext);
+  const toast = useToast();
 
   const handleAdd = (e, i, p) => {
-    const btn = document.getElementById("btn" + i);
-    btn.disabled = true;
-    e.target.childNodes[0].data = "Added";
-    handleCartProduct(p);
+    // checking authentication before adding product to cart
+    if (isReg) handleCartProduct(p)
+    else toast({
+      title: 'Please Login/signup to add product to cart', position: 'bottom-left', status: 'error', duration: 3000, isClosable: true
+    });
   };
 
   let path = window.location.pathname.split("/");

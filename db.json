@@ -1,15 +1,14 @@
 {
   "users": [
     {
-      "fName": "Ashok",
+      "fName": "Ashok ",
       "lName": "Kumar",
       "email": "ap271449@gmail.com",
       "gender": "Male",
-      "password": "123456789",
+      "password": "123456",
       "mobileNumber": "9799191449",
-      "cart": [],
-      "order": [],
-      "id": 1
+      "id": 1,
+      "cart": []
     }
   ],
   "all": [

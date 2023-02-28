@@ -1,6 +1,7 @@
 import { useToast } from "@chakra-ui/react";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { updateCart } from "../Components/API";
+import { AuthContext } from "./AuthContext";
 
 export const CartContext = createContext();
 const cCount = JSON.parse(localStorage.getItem("cartCount")) || 0;
@@ -10,7 +11,7 @@ function CartContextProvider({ children }) {
   const [cartCount, setCartCount] = useState(cCount);
   const [cartProduct, setCartProduct] = useState(cProduct);
   const toast = useToast();
-  const user = JSON.parse(localStorage.getItem("user")) || {};
+  const { userData } = useContext(AuthContext);
 
   useEffect(() => {
     localStorage.setItem("cartCount", JSON.stringify(cartCount));
@@ -32,7 +33,7 @@ function CartContextProvider({ children }) {
     try {
       p.quantity = 1;
       // adding product to database
-      await updateCart(user.id, [...cartProduct, p]);
+      await updateCart(userData.id, [...cartProduct, p]);
 
       // addding product to cart
       setCartProduct([...cartProduct, p]);
@@ -61,7 +62,7 @@ function CartContextProvider({ children }) {
 
     try {
       // removing product from database
-      await updateCart(user.id, cProducts);
+      await updateCart(userData.id, cProducts);
 
       // removing product from cart
       setCartProduct(cProducts);

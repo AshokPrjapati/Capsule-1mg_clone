@@ -18,7 +18,7 @@ function Products() {
   const [sort, setSort] = useState("");
   const { category } = useParams();
 
-  const { handleCartCount, handleCartProduct } = useContext(CartContext);
+  const { handleCartProduct } = useContext(CartContext);
 
   let limit = 12;
 
@@ -38,7 +38,7 @@ function Products() {
   };
 
   const handleAdd = (e, i, p) => {
-    handleCartCount(1);
+    console.log(p);
     const btn = document.getElementById("btn" + i);
     btn.disabled = true;
     e.target.childNodes[0].data = "Added";
@@ -63,14 +63,14 @@ function Products() {
         >
           {data.length
             ? data.map((p) => (
-                <ProductCard
-                  key={p.id}
-                  id={p.id}
-                  p={{ ...p }}
-                  category={category}
-                  handleAdd={handleAdd}
-                />
-              ))
+              <ProductCard
+                key={p.id}
+                id={p.id}
+                p={{ ...p }}
+                category={category}
+                handleAdd={handleAdd}
+              />
+            ))
             : d.map((el) => <Load key={el} />)}
         </Grid>
         <Pagination

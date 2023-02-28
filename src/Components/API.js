@@ -1,37 +1,45 @@
 import axios from "axios";
-const api = `http://localhost:8080`;
+
+axios.defaults.baseURL = `http://localhost:8080`;
 // const api = `https://capsule-web-server.onrender.com`
 
 export const postUserData = (userData) => {
-    return axios.post(`${api}/users`, {
+    return axios.post(`/users`, {
         ...userData,
     });
 };
 
 
 export const fetchUser = () => {
-    return axios.get(`${api}/users`);
+    return axios.get(`/users`);
 };
+
+
+// updating the cart products in db
+export const updateCart = (id, cartProducts) => {
+    console.log(id, cartProducts)
+    return axios.patch(`/users/${id}`, { "cart": [...cartProducts] });
+}
 
 export const fetchProduct = ({ category, limit, sort, page }) => {
     return axios
         .get(
-            `${api}/${category}?_page=${page}&_limit=${limit}&${sort}`
+            `/${category}?_page=${page}&_limit=${limit}&${sort}`
         )
 }
 
 export const fetchSingleProduct = ({ category, id }) => {
-    return axios.get(`${api}/${category}/${id}`);
+    return axios.get(`/${category}/${id}`);
 }
 
 export const CarouselData = ({ category }) => {
     return axios
-        .get(`${api}/${category}?_page=1&_limit=10`)
+        .get(`/${category}?_page=1&_limit=10`)
 }
 
 export const fetchCategoryData = ({ category, page, limit, sort }) => {
     return axios
         .get(
-            `${api}/${category}?_page=${page}&_limit=${limit}&${sort}`
+            `/${category}?_page=${page}&_limit=${limit}&${sort}`
         )
 }

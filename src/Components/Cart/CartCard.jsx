@@ -6,7 +6,7 @@ import QuantityCounter from './QuantityCounter'
 
 function CartCard({ product, handleRemove }) {
     const { cartProduct, setCartProduct } = useContext(CartContext);
-    const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState(product.quantity || 1);
 
     const handleQuantity = (val) => {
         setQuantity(quantity + val);

@@ -24,7 +24,6 @@ function CartContextProvider({ children }) {
 
 
   const handleCartProduct = async (p) => {
-    console.log("p", p)
     // is product already exists
     const isAlreadyExist = cartProduct.filter((product) => p.id === product.id);
     if (isAlreadyExist.length) return toast({
@@ -34,9 +33,7 @@ function CartContextProvider({ children }) {
     try {
       p.quantity = 1;
       // adding product to database
-      let res = await updateCart(user.id, [...cartProduct, p]);
-      console.log(p)
-      let data = await res.data;
+      await updateCart(user.id, [...cartProduct, p]);
 
       // addding product to cart
       setCartProduct([...cartProduct, p]);
@@ -65,7 +62,7 @@ function CartContextProvider({ children }) {
 
     try {
       // removing product from database
-      let res = await updateCart(user.id, cProducts);
+      await updateCart(user.id, cProducts);
 
       // removing product from cart
       setCartProduct(cProducts);

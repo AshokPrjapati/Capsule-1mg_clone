@@ -14,10 +14,9 @@ import { fetchSingleProduct } from "../Components/API";
 
 function SingleProduct() {
   const [data, setData] = useState({});
-  const { handleCartCount, handleCartProduct } = useContext(CartContext);
+  const { handleCartProduct } = useContext(CartContext);
 
   const handleAdd = (e, i, p) => {
-    handleCartCount(1);
     const btn = document.getElementById("btn" + i);
     btn.disabled = true;
     e.target.childNodes[0].data = "Added";

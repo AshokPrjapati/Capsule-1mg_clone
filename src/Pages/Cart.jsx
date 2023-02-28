@@ -5,7 +5,7 @@ import { Box, Flex } from "@chakra-ui/react";
 import CartCard from "../Components/Cart/CartCard";
 
 function Cart() {
-  const { cartProduct, handleCartCount, removeCartItem } = useContext(CartContext);
+  const { cartProduct, removeCartItem } = useContext(CartContext);
   const [totalPrice, setTotalprice] = useState(0);
 
   let price = 0;
@@ -18,7 +18,6 @@ function Cart() {
 
   const handleRemove = (id) => {
     removeCartItem(id);
-    handleCartCount(-1);
   };
 
 

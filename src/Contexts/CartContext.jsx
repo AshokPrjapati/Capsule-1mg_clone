@@ -1,9 +1,8 @@
 import { useToast } from "@chakra-ui/react";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { updateCart } from "../Components/API";
-import { AuthContext } from "./AuthContext";
-export const CartContext = createContext();
 
+export const CartContext = createContext();
 const cCount = JSON.parse(localStorage.getItem("cartCount")) || 0;
 const cProduct = JSON.parse(localStorage.getItem("cartProduct")) || [];
 
@@ -12,6 +11,7 @@ function CartContextProvider({ children }) {
   const [cartProduct, setCartProduct] = useState(cProduct);
   const toast = useToast();
   const user = JSON.parse(localStorage.getItem("user")) || {};
+  let regStatus = JSON.parse(localStorage.getItem("regStatus")) || false;
 
   useEffect(() => {
     localStorage.setItem("cartCount", JSON.stringify(cartCount));
@@ -24,6 +24,13 @@ function CartContextProvider({ children }) {
 
 
   const handleCartProduct = async (p) => {
+    // checking authentication before adding product to cart
+    if (!regStatus) {
+      toast({
+        title: 'Please Login/signup to add product to cart', position: 'bottom-left', status: 'error', duration: 3000, isClosable: true,
+      });
+    }
+
     // is product already exists
     const isAlreadyExist = cartProduct.filter((product) => p.id === product.id);
     if (isAlreadyExist.length) return toast({

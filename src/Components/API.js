@@ -1,7 +1,7 @@
 import axios from "axios";
 
 axios.defaults.baseURL = `http://localhost:8080`;
-// const api = `https://capsule-web-server.onrender.com`
+// axios.defaults.baseURL = `https://capsule-web-server.onrender.com`
 
 export const postUserData = (userData) => {
     return axios.post(`/users`, {

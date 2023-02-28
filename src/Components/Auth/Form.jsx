@@ -14,6 +14,7 @@ import {
   Stack,
   useColorModeValue,
   Select,
+  useToast,
 } from "@chakra-ui/react";
 
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
@@ -100,7 +101,7 @@ function UserAuthForm({ mobileNumber }) {
   const [userData, setUserData] = useState(intialData);
   const [showPassword, setShowPassword] = useState(false);
   const [loader, setLoader] = useState(false);
-  const [setCartProduct] = useContext(CartContext);
+  const toast = useToast();
 
   const handleChange = (event) => {
     setUserData({
@@ -109,25 +110,37 @@ function UserAuthForm({ mobileNumber }) {
       [event.target.name]: event.target.value,
     });
   };
+  const { fName, lName, email, gender, password } = userData;
 
   const handleSubmit = (e) => {
-    setLoader(true);
     e.preventDefault();
-    postUserData(userData)
-      .then((res) => {
-        onOpen();
-        handleIsReg(true);
-        handleUser(res.data);
-        setLoader(false);
+    if (!fName || !lName || !email || !gender || !password) {
+      toast({
+        title: 'Please fill all the fields', position: 'bottom-left', status: 'error', duration: 4000, isClosable: true,
       })
-      .catch((er) => {
-        setLoader(false);
-        onOpenAlert();
-      });
-    setUserData(intialData);
+    } else if (password.length < 8) {
+      toast({
+        title: 'Password length must be greater than 8', position: 'bottom-left', status: 'error', duration: 4000, isClosable: true,
+      })
+    } else {
+      setLoader(true);
+      postUserData(userData)
+        .then((res) => {
+          onOpen();
+          handleIsReg(true);
+          handleUser(res.data);
+          setLoader(false);
+        })
+        .catch((er) => {
+          setLoader(false);
+          onOpenAlert();
+        });
+      setUserData(intialData);
+    }
+
   };
 
-  const { fName, lName, email, gender, password } = userData;
+
 
   return (
     <FormControl>
@@ -143,6 +156,7 @@ function UserAuthForm({ mobileNumber }) {
                     name="fName"
                     value={fName}
                     onChange={handleChange}
+                    required
                   />
                 </FormControl>
               </Box>
@@ -196,22 +210,20 @@ function UserAuthForm({ mobileNumber }) {
                 </InputRightElement>
               </InputGroup>
             </FormControl>
-            <Link to="/">
-              <Button
-                isLoading={loader}
-                loadingText=" Registering"
-                variant="outline"
-                spinnerPlacement="start"
-                bg={"#ff6f61"}
-                w="100%"
-                onClick={handleSubmit}
-                _hover={{
-                  bg: "#ff4f61",
-                }}
-              >
-                Register
-              </Button>
-            </Link>
+            <Button
+              isLoading={loader}
+              loadingText=" Registering"
+              variant="outline"
+              spinnerPlacement="start"
+              bg={"#ff6f61"}
+              w="100%"
+              onClick={handleSubmit}
+              _hover={{
+                bg: "#ff4f61",
+              }}
+            >
+              Register
+            </Button>
           </Stack>
         </Box>
       </Stack>

@@ -290,42 +290,35 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
     <Flex fontSize="14px">
       <Box width={"max-content"}>
-        <NavLink to={href}>
-          <Link
-            role={"group"}
-            display={"block"}
-            p={2}
-            rounded={"md"}
-            _hover={{
-              textDecoration: "none",
-              color: "#ff6f61",
-            }}
-            textAlign="left"
-          >
-            <Text transition={"all .3s ease"} fontWeight="700">
-              {label}
-            </Text>
-          </Link>
-        </NavLink>
+        <Text as={NavLink} to={href} role={"group"}
+          display={"block"}
+          p={2}
+          rounded={"md"}
+          _hover={{
+            textDecoration: "none",
+            color: "#ff6f61",
+          }}
+          textAlign="left">
+
+          <Text transition={"all .3s ease"} fontWeight="700">
+            {label}
+          </Text>
+        </Text>
         {subLabel.length
           ? subLabel.map((sl, i) => (
-              <NavLink key={i} to={href}>
-                <Link
-                  role={"group"}
-                  display={"block"}
-                  p={2}
-                  rounded={"md"}
-                  _hover={{
-                    textDecoration: "none",
-                    color: "#ff6f61",
-                  }}
-                  textAlign="left"
-                  key={i}
-                >
-                  <Text fontSize={"sm"}>{sl}</Text>
-                </Link>
-              </NavLink>
-            ))
+            <Text as={NavLink} key={i} to={href} role={"group"}
+              display={"block"}
+              p={2}
+              rounded={"md"}
+              _hover={{
+                textDecoration: "none",
+                color: "#ff6f61",
+              }}
+              textAlign="left"
+            >
+              <Text fontSize={"sm"}>{sl}</Text>
+            </Text>
+          ))
           : null}
       </Box>
     </Flex>

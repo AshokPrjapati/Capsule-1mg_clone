@@ -3,10 +3,10 @@ import { CartContext } from "../Contexts/CartContext";
 import { useContext } from "react";
 import { Box, Flex } from "@chakra-ui/react";
 import CartCard from "../Components/Cart/CartCard";
-import { fetchUser } from "../Components/API";
+import EmptyCartPage from "../Components/Cart/EmptyCartPage";
 
 function Cart() {
-  const { cartProduct, removeCartItem, setCartProduct } = useContext(CartContext);
+  const { cartProduct, removeCartItem } = useContext(CartContext);
   const [totalPrice, setTotalprice] = useState(0);
 
   let price = 0;
@@ -23,14 +23,18 @@ function Cart() {
 
 
   return (
-    <Flex w={"80%"} p={"20px"} m="20px auto" gap={4}>
-      <Box>
-        {cartProduct.map((p) => (
-          <CartCard key={p.id} product={p} handleRemove={handleRemove} />
-        ))}
-      </Box>
-      <Box w={"40%"}>{totalPrice}</Box>
-    </Flex>
+    <>
+      {
+        cartProduct.length ? <Flex w={"80%"} p={"20px"} m="20px auto" gap={4}>
+          <Box>
+            {cartProduct.map((p) => (
+              <CartCard key={p.id} product={p} handleRemove={handleRemove} />
+            ))}
+          </Box>
+          <Box w={"40%"}>{totalPrice}</Box>
+        </Flex> : <EmptyCartPage />
+      }
+    </>
   );
 }
 

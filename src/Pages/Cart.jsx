@@ -7,16 +7,21 @@ import EmptyCartPage from "../Components/Cart/EmptyCartPage";
 import CartSummary from "../Components/Cart/CartSummary";
 
 function Cart() {
-  const { cartProduct, removeCartItem } = useContext(CartContext);
+  const { cartProduct, removeCartItem, isCoupanApplied } = useContext(CartContext);
   const [totalPrice, setTotalprice] = useState(0);
 
   let price = 0;
-  if (cartProduct.length) for (let p of cartProduct) price += p.quantity * p.price;
+  if (cartProduct.length) {
+    for (let p of cartProduct) price += p.quantity * p.price;
+    if (isCoupanApplied) {
+      price -= (price * .10);
+    }
+  }
 
 
   useEffect(() => {
     setTotalprice(price.toFixed(2));
-  }, [cartProduct]);
+  }, [price]);
 
   const handleRemove = (id) => {
     removeCartItem(id);
@@ -33,7 +38,7 @@ function Cart() {
             ))}
           </Box>
           <Box w={"40%"} border="1px solid blue">
-            <CartSummary price={totalPrice} setPrice={setTotalprice} />
+            <CartSummary price={totalPrice} />
           </Box>
         </Container> : <EmptyCartPage />
       }

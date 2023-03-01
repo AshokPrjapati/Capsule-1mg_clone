@@ -1,5 +1,5 @@
 import { DeleteIcon } from '@chakra-ui/icons'
-import { Box, Button, Flex, Heading, Stack, Text, useToast } from '@chakra-ui/react'
+import { Button, Flex, Heading, Stack, Text, useToast } from '@chakra-ui/react'
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../Contexts/AuthContext';
 import { CartContext } from '../../Contexts/CartContext';

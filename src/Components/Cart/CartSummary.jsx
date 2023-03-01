@@ -1,5 +1,5 @@
 
-import { Box, Button, Flex, Stack, Text, useDisclosure } from '@chakra-ui/react'
+import { Button, Flex, Stack, Text, useDisclosure } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useContext } from 'react';
 import { CartContext } from '../../Contexts/CartContext';

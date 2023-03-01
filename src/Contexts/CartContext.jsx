@@ -1,21 +1,17 @@
 import { useToast } from "@chakra-ui/react";
 import { createContext, useContext, useEffect, useState } from "react";
-import { updateCart } from "../Components/API";
+import { updateCart, updateCoupanStatus } from "../Components/API";
 import { AuthContext } from "./AuthContext";
 
 export const CartContext = createContext();
-const cCount = JSON.parse(localStorage.getItem("cartCount")) || 0;
 const cProduct = JSON.parse(localStorage.getItem("cartProduct")) || [];
 
 function CartContextProvider({ children }) {
-  const [cartCount, setCartCount] = useState(cCount);
+  const [loading, setLoading] = useState(false);
   const [cartProduct, setCartProduct] = useState(cProduct);
+  const [isCoupanApplied, setIsCoupanApplied] = useState(false);
   const toast = useToast();
   const { userData } = useContext(AuthContext);
-
-  useEffect(() => {
-    localStorage.setItem("cartCount", JSON.stringify(cartCount));
-  }, [cartCount]);
 
   useEffect(() => {
     localStorage.setItem("cartProduct", JSON.stringify(cartProduct));
@@ -30,6 +26,8 @@ function CartContextProvider({ children }) {
       title: 'Product already exists in cart', position: 'bottom-left', status: 'info', duration: 5000, isClosable: true,
     });
 
+    setLoading(true);
+
     try {
       p.quantity = 1;
       // adding product to database
@@ -37,9 +35,7 @@ function CartContextProvider({ children }) {
 
       // addding product to cart
       setCartProduct([...cartProduct, p]);
-
-      // setting cart count
-      setCartCount(cartCount + 1)
+      setLoading(false);
 
       // success message 
       toast({
@@ -48,6 +44,7 @@ function CartContextProvider({ children }) {
 
     } catch (error) {
       console.log(error);
+      setLoading(false);
 
       //error
       toast({
@@ -59,6 +56,7 @@ function CartContextProvider({ children }) {
 
   const removeCartItem = async (id) => {
     const cProducts = cartProduct.filter((el) => el.id !== id);
+    setLoading(true);
 
     try {
       // removing product from database
@@ -66,9 +64,7 @@ function CartContextProvider({ children }) {
 
       // removing product from cart
       setCartProduct(cProducts);
-
-      // setting cart count
-      setCartCount(cartCount - 1);
+      setLoading(false);
 
       // success message 
       toast({
@@ -77,6 +73,7 @@ function CartContextProvider({ children }) {
 
     } catch (error) {
       console.log(error);
+      setLoading(false);
       //error
       toast({
         title: 'Something went wrong', position: 'bottom-left', status: 'error', duration: 5000, isClosable: true,
@@ -85,14 +82,27 @@ function CartContextProvider({ children }) {
 
   }
 
+  // updting coupan application status
+  const handleCoupan = async (status) => {
+    setLoading(true);
+    setIsCoupanApplied(status);
+    setLoading(false);
+    toast({
+      title: 'Coupan Applied Succesfully', position: 'bottom-left', status: 'success', duration: 4000, isClosable: true,
+    })
+  }
+
   return (
     <CartContext.Provider
       value={{
         handleCartProduct,
         setCartProduct,
         cartProduct,
-        cartCount,
-        removeCartItem
+        handleCoupan,
+        removeCartItem,
+        loading,
+        setLoading,
+        isCoupanApplied
       }}
     >
       {children}

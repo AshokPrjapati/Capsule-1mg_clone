@@ -1,4 +1,4 @@
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
 
 
 function QuantityCounter({ sPrice, quantity, handleQuantity }) {
@@ -6,14 +6,15 @@ function QuantityCounter({ sPrice, quantity, handleQuantity }) {
 
   return (
     <>
-      {sPrice ? <Text
-        color="grey"
-        textDecor="line-through"
-        fontSize={"12px"}
-        fontWeight={800}
-      >
-        ₹ {sPrice}
-      </Text> : null}
+      {sPrice ? <Box fontSize={"13px"}>
+        MRP <Text as={"span"}
+          color="grey"
+          textDecor="line-through"
+          fontSize={"12px"}
+          fontWeight={800}
+        >
+          ₹ {sPrice}
+        </Text></Box> : null}
 
       <Flex>
         <Button

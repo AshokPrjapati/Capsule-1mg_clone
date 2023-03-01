@@ -8,7 +8,7 @@ import CoupanModal from './CoupanModal';
 
 function CartSummary({ price }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const { isCoupanApplied, cartProduct } = useContext(CartContext);
+    const { isCoupanApplied, cartProduct, handleCoupanStatus } = useContext(CartContext);
     const [discount, setDiscount] = useState(0);
     const [loading, setLoading] = useState()
 
@@ -22,7 +22,7 @@ function CartSummary({ price }) {
             let cart = res.data[0].cart;
             if (cart.length) {
                 cart.forEach(product => {
-                    if (product["strike-price"]) mrp += product["strike-price"] * product.quantity;
+                    product["strike-price"] ? mrp += product["strike-price"] * product.quantity : mrp += product.price * product.quantity
                     price += product.price * product.quantity
                 })
             }
@@ -42,8 +42,8 @@ function CartSummary({ price }) {
             <Stack px={4} py={2} shadow="xl" bg="#fff" borderRadius={"5px"}>
                 <Text fontWeight={"semibold"} fontSize="18px" color="teal.600">You can save extra by apply coupan</Text>
                 <hr />
-                <Button disabled={isCoupanApplied} px="30px" bg={"#ff6f61"} color="#fff" borderRadius={"5px"} fontSize={"16px"} fontWeight="bold" _hover={{ bg: "#ff4f41" }} onClick={onOpen}>
-                    {isCoupanApplied ? "Applied" : "Apply Coupan"}
+                <Button px="30px" bg={"#ff6f61"} color="#fff" borderRadius={"5px"} fontSize={"16px"} fontWeight="bold" _hover={{ bg: "#ff4f41" }} onClick={isCoupanApplied ? () => handleCoupanStatus(false) : onOpen}>
+                    {isCoupanApplied ? "Remove Coupan" : "Apply Coupan"}
                 </Button>
             </Stack>
             <Stack px={4} py={2} shadow="xl" bg="#fff" borderRadius={"5px"}>

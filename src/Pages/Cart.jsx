@@ -7,7 +7,7 @@ import EmptyCartPage from "../Components/Cart/EmptyCartPage";
 import CartSummary from "../Components/Cart/CartSummary";
 
 function Cart() {
-  const { cartProduct, isCoupanApplied } = useContext(CartContext);
+  const { cartProduct, isCoupanApplied, handleCoupanStatus } = useContext(CartContext);
   const [totalPrice, setTotalprice] = useState(0);
 
   let price = 0;
@@ -21,6 +21,9 @@ function Cart() {
 
   useEffect(() => {
     setTotalprice(price.toFixed(2));
+    if (!cartProduct.length && isCoupanApplied) {
+      handleCoupanStatus(false);
+    }
   }, [price]);
 
   return (

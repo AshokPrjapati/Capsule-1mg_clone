@@ -6,13 +6,33 @@ import {
   Flex,
   Button,
   Heading,
+  useToast,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./ProductCarousel.module.css";
 import { BsStarFill } from "react-icons/bs";
+import { CartContext } from "../../Contexts/CartContext";
+import { AuthContext } from "../../Contexts/AuthContext";
 
-function ProductCard({ category, handleAdd, id, p }) {
+function ProductCard({ category, id, p }) {
+  const { isReg } = useContext(AuthContext);
+  const { handleCartProduct } = useContext(CartContext);
+  const [loading, setLoading] = useState(false);
+  const toast = useToast();
+
+
+  const handleAdd = () => {
+    // checking authentication before adding product to cart
+    if (isReg && p.id) {
+      handleCartProduct(p, setLoading);
+    }
+    else toast({
+      title: 'Please Login/signup to add product to cart', position: 'bottom-left', status: 'error', duration: 3000, isClosable: true
+    });
+
+  };
+
   return (
     <GridItem
       w="100%"
@@ -100,13 +120,15 @@ function ProductCard({ category, handleAdd, id, p }) {
           {p["price"] ? `₹${p["price"]}` : null}
         </Heading>
         <Button
+          isLoading={loading}
+          loadingText={"Adding"}
           zIndex={100}
           bg={"#fff"}
           id={"btn" + id}
           size={"sm"}
           color="#ff6f61"
           _hover={{ bg: "#ff6f61", color: "#fff" }}
-          onClick={(e) => handleAdd(e, id, p)}
+          onClick={handleAdd}
         >
           {category === "disease" ? null : "Add"}
         </Button>

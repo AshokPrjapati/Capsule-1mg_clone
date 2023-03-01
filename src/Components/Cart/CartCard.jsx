@@ -7,7 +7,8 @@ import { updateCart } from '../API';
 import QuantityCounter from './QuantityCounter'
 
 function CartCard({ product }) {
-    const { cartProduct, setCartProduct, loading, removeCartItem } = useContext(CartContext);
+    const [loading, setLoading] = useState(false);
+    const { cartProduct, setCartProduct, removeCartItem } = useContext(CartContext);
     const [quantity, setQuantity] = useState(product.quantity || 1);
     const { userData } = useContext(AuthContext);
     const toast = useToast();
@@ -19,7 +20,7 @@ function CartCard({ product }) {
     }
 
     const handleRemove = (id) => {
-        removeCartItem(id);
+        removeCartItem(id, setLoading);
     };
 
     useEffect(() => {

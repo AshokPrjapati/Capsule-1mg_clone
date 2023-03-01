@@ -1,13 +1,12 @@
 import { useToast } from "@chakra-ui/react";
 import { createContext, useContext, useEffect, useState } from "react";
-import { updateCart, updateCoupanStatus } from "../Components/API";
+import { updateCart } from "../Components/API";
 import { AuthContext } from "./AuthContext";
 
 export const CartContext = createContext();
 const cProduct = JSON.parse(localStorage.getItem("cartProduct")) || [];
 
 function CartContextProvider({ children }) {
-  const [loading, setLoading] = useState(false);
   const [cartProduct, setCartProduct] = useState(cProduct);
   const [isCoupanApplied, setIsCoupanApplied] = useState(false);
   const toast = useToast();
@@ -18,7 +17,7 @@ function CartContextProvider({ children }) {
   }, [cartProduct]);
 
 
-  const handleCartProduct = async (p) => {
+  const handleCartProduct = async (p, setLoading) => {
 
     // is product already exists
     const isAlreadyExist = cartProduct.filter((product) => p.id === product.id);
@@ -26,9 +25,8 @@ function CartContextProvider({ children }) {
       title: 'Product already exists in cart', position: 'bottom-left', status: 'info', duration: 5000, isClosable: true,
     });
 
-    setLoading(true);
-
     try {
+      setLoading(true);
       p.quantity = 1;
       // adding product to database
       await updateCart(userData.id, [...cartProduct, p]);
@@ -45,7 +43,6 @@ function CartContextProvider({ children }) {
     } catch (error) {
       console.log(error);
       setLoading(false);
-
       //error
       toast({
         title: 'Something went wrong', position: 'bottom-left', status: 'error', duration: 5000, isClosable: true,
@@ -54,18 +51,17 @@ function CartContextProvider({ children }) {
 
   };
 
-  const removeCartItem = async (id) => {
+  const removeCartItem = async (id, setLoading) => {
     const cProducts = cartProduct.filter((el) => el.id !== id);
-    setLoading(true);
 
     try {
+      setLoading(true)
       // removing product from database
       await updateCart(userData.id, cProducts);
 
       // removing product from cart
       setCartProduct(cProducts);
-      setLoading(false);
-
+      setLoading(false)
       // success message 
       toast({
         title: `product is removed from cart`, position: 'bottom-left', status: 'success', duration: 5000, isClosable: true,
@@ -73,7 +69,7 @@ function CartContextProvider({ children }) {
 
     } catch (error) {
       console.log(error);
-      setLoading(false);
+      // setLoading(false)
       //error
       toast({
         title: 'Something went wrong', position: 'bottom-left', status: 'error', duration: 5000, isClosable: true,
@@ -83,14 +79,22 @@ function CartContextProvider({ children }) {
   }
 
   // updting coupan application status
-  const handleCoupan = async (status) => {
-    setLoading(true);
+  const handleCoupanStatus = async (status) => {
     setIsCoupanApplied(status);
-    setLoading(false);
-    toast({
-      title: 'Coupan Applied Succesfully', position: 'bottom-left', status: 'success', duration: 4000, isClosable: true,
-    })
   }
+
+
+  // showing update message
+  useEffect(() => {
+    let title = isCoupanApplied ? "Coupan Applied Successfully" : "Coupon removed";
+    toast({
+      title,
+      position: 'bottom-left',
+      status: 'success',
+      duration: 4000,
+      isClosable: true,
+    });
+  }, [isCoupanApplied]);
 
   return (
     <CartContext.Provider
@@ -98,10 +102,8 @@ function CartContextProvider({ children }) {
         handleCartProduct,
         setCartProduct,
         cartProduct,
-        handleCoupan,
+        handleCoupanStatus,
         removeCartItem,
-        loading,
-        setLoading,
         isCoupanApplied
       }}
     >

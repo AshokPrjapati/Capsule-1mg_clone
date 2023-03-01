@@ -15,8 +15,9 @@ import { useState } from 'react';
 import { CartContext } from '../../Contexts/CartContext';
 
 function CoupanModal({ isOpen, onClose }) {
+    const [loading, setLoading] = useState(false);
     const [coupan, setCoupan] = useState("");
-    const { handleCoupan, loading, setLoading } = useContext(CartContext);
+    const { handleCoupanStatus } = useContext(CartContext);
     const toast = useToast();
 
     // coupan input field change stored in coupan state
@@ -27,7 +28,7 @@ function CoupanModal({ isOpen, onClose }) {
     // handle the coupan validation and submission
     const handleApply = () => {
         if (coupan === "CAPSULE10") {
-            handleCoupan(true);
+            handleCoupanStatus(true);
             onClose();
         } else {
             setLoading(false);
@@ -81,7 +82,7 @@ function CoupanModal({ isOpen, onClose }) {
                         </FormControl>
                         <FormControl w={{ base: '100%', md: '40%' }}>
                             <Button isLoading={loading} loadingText={"Validating"} bg={"#ff6f61"} color="#fff" _hover={{ bg: "#ff4f41" }} onClick={handleApply}>
-                                Submit
+                                Apply
                             </Button>
                         </FormControl>
                     </Stack>

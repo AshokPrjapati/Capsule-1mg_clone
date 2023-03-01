@@ -16,13 +16,14 @@ import { AuthContext } from "../Contexts/AuthContext";
 
 function SingleProduct() {
   const [data, setData] = useState({});
+  const [loading, setLoading] = useState(false);
   const { handleCartProduct } = useContext(CartContext);
   const { isReg } = useContext(AuthContext);
   const toast = useToast();
 
   const handleAdd = (e, i, p) => {
     // checking authentication before adding product to cart
-    if (isReg) handleCartProduct(p)
+    if (isReg) handleCartProduct(p, setLoading)
     else toast({
       title: 'Please Login/signup to add product to cart', position: 'bottom-left', status: 'error', duration: 3000, isClosable: true
     });
@@ -120,6 +121,8 @@ function SingleProduct() {
           </Text>
         </Flex>
         <Button
+          isLoading={loading}
+          loadingText={"Adding"}
           w={"100%"}
           id={"btn" + id}
           size={"md"}

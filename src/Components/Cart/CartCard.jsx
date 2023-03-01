@@ -6,8 +6,8 @@ import { CartContext } from '../../Contexts/CartContext';
 import { updateCart } from '../API';
 import QuantityCounter from './QuantityCounter'
 
-function CartCard({ product, handleRemove }) {
-    const { cartProduct, setCartProduct, loading } = useContext(CartContext);
+function CartCard({ product }) {
+    const { cartProduct, setCartProduct, loading, removeCartItem } = useContext(CartContext);
     const [quantity, setQuantity] = useState(product.quantity || 1);
     const { userData } = useContext(AuthContext);
     const toast = useToast();
@@ -17,6 +17,10 @@ function CartCard({ product, handleRemove }) {
             title: 'Please login First to update quantity', position: 'bottom-left', status: 'info', duration: 5000, isClosable: true,
         });
     }
+
+    const handleRemove = (id) => {
+        removeCartItem(id);
+    };
 
     useEffect(() => {
         const cProducts = cartProduct.map(p => p.id === product.id ? { ...p, "quantity": quantity } : p);

@@ -28,7 +28,7 @@ import { CartContext } from "../../Contexts/CartContext";
 import { NAV_ITEMS, AUTH_ITEMS } from "./NavConstants";
 
 export default function WithSubnavigation() {
-  const { cartCount } = useContext(CartContext);
+  const { cartProduct } = useContext(CartContext);
   const { isReg } = useContext(AuthContext);
   const { isOpen, onToggle } = useDisclosure();
 
@@ -138,7 +138,7 @@ export default function WithSubnavigation() {
           </Text>
           <RouterLink to="/cart">
             <FaShoppingCart
-              color={cartCount ? "#ff6f61" : "#000"}
+              color={cartProduct.length ? "#ff6f61" : "#000"}
               fontSize={"20px"}
               cursor="pointer"
             />

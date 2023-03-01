@@ -20,6 +20,11 @@ export const updateCart = (id, cartProducts) => {
     return axios.patch(`/users/${id}`, { cart: [...cartProducts] });
 }
 
+// For updating promo code status is applied or not
+// export const updateCoupanStatus = (id, status) => {
+//     return axios.patch(`/users/${id}`, { isPromoCodeApplied: status });
+// }
+
 export const fetchProduct = ({ category, limit, sort, page }) => {
     return axios
         .get(

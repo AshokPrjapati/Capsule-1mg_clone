@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Navbar />
       <SearchNav />
-      <Category />
+      {/* <Category /> */}
       <AllRoutes />
     </div>
   );

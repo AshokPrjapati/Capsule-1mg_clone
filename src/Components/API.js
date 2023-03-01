@@ -1,6 +1,12 @@
 import axios from "axios";
 
-axios.defaults.baseURL = `http://localhost:8080`;
+// cyclic api
+axios.defaults.baseURL = `https://encouraging-bass-jumper.cyclic.app`;
+
+// local host
+// axios.defaults.baseURL = `http://localhost:8080`;
+
+// render api
 // axios.defaults.baseURL = `https://capsule-web-server.onrender.com`
 
 export const postUserData = (userData) => {

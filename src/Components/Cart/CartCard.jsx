@@ -8,7 +8,7 @@ import QuantityCounter from './QuantityCounter'
 
 function CartCard({ product }) {
     const [loading, setLoading] = useState(false);
-    const { cartProduct, setCartProduct, removeCartItem } = useContext(CartContext);
+    const { cartProduct, setCartProduct, removeCartItem, getDiscount } = useContext(CartContext);
     const [quantity, setQuantity] = useState(product.quantity || 1);
     const { userData } = useContext(AuthContext);
     const toast = useToast();
@@ -25,8 +25,10 @@ function CartCard({ product }) {
 
     useEffect(() => {
         const cProducts = cartProduct.map(p => p.id === product.id ? { ...p, "quantity": quantity } : p);
+        updateCart(userData.id, cProducts).then(res => {
+            getDiscount();
+        })
         setCartProduct(cProducts);
-        updateCart(userData.id, cProducts);
     }, [quantity])
 
 

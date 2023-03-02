@@ -1,16 +1,33 @@
 import { useToast } from "@chakra-ui/react";
 import { createContext, useContext, useEffect, useState } from "react";
-import { updateCart } from "../Components/API";
+import { fetchUser, updateCart } from "../Components/API";
 import { AuthContext } from "./AuthContext";
 
 export const CartContext = createContext();
-const cProduct = JSON.parse(localStorage.getItem("cartProduct")) || [];
+
+const fetchCartData = async (id) => {
+  try {
+    let res = await fetchUser();
+    let users = await res.data;
+    let user = users.filter(u => u.id === id);
+    return user[0].cart;
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 function CartContextProvider({ children }) {
-  const [cartProduct, setCartProduct] = useState(cProduct);
+  const [load, setLoad] = useState(false);
+  const { userData } = useContext(AuthContext);
+  const [cartProduct, setCartProduct] = useState([]);
+  const [discount, setDiscount] = useState();
   const [isCoupanApplied, setIsCoupanApplied] = useState(false);
   const toast = useToast();
-  const { userData } = useContext(AuthContext);
+
+  useEffect(() => {
+    fetchCartData(userData.id).then(res => setCartProduct(res));
+  }, [])
+
 
   useEffect(() => {
     localStorage.setItem("cartProduct", JSON.stringify(cartProduct));
@@ -18,6 +35,7 @@ function CartContextProvider({ children }) {
 
 
   const handleCartProduct = async (p, setLoading) => {
+    console.log(cartProduct)
 
     // is product already exists
     const isAlreadyExist = cartProduct.filter((product) => p.id === product.id);
@@ -30,6 +48,7 @@ function CartContextProvider({ children }) {
       p.quantity = 1;
       // adding product to database
       await updateCart(userData.id, [...cartProduct, p]);
+      getDiscount();
 
       // addding product to cart
       setCartProduct([...cartProduct, p]);
@@ -58,6 +77,7 @@ function CartContextProvider({ children }) {
       setLoading(true)
       // removing product from database
       await updateCart(userData.id, cProducts);
+      getDiscount();
 
       // removing product from cart
       setCartProduct(cProducts);
@@ -81,12 +101,7 @@ function CartContextProvider({ children }) {
   // updting coupan application status
   const handleCoupanStatus = async (status) => {
     setIsCoupanApplied(status);
-  }
-
-
-  // showing update message
-  useEffect(() => {
-    let title = isCoupanApplied ? "Coupan Applied Successfully" : "Coupon removed";
+    let title = status ? "Coupan Applied Successfully" : "Coupon removed";
     toast({
       title,
       position: 'bottom-left',
@@ -94,6 +109,31 @@ function CartContextProvider({ children }) {
       duration: 4000,
       isClosable: true,
     });
+  }
+
+  // calculating discounting by getting mrp from database
+  const getDiscount = () => {
+    setLoad(true);
+    fetchUser().then(res => {
+      let mrp = 0;
+      let price = 0;
+      let dis = 0;
+      let cart = res.data[0].cart;
+      if (cart.length) {
+        cart.forEach(product => {
+          product["strike-price"] ? mrp += product["strike-price"] * product.quantity : mrp += product.price * product.quantity
+          price += product.price * product.quantity
+        })
+      }
+      if (mrp) dis += mrp - price;
+      if (isCoupanApplied) dis += price * .10;
+      setLoad(false);
+      setDiscount(dis.toFixed(2));
+    }).catch((err) => setLoad(false));
+  };
+
+  useEffect(() => {
+    getDiscount();
   }, [isCoupanApplied]);
 
   return (
@@ -104,7 +144,10 @@ function CartContextProvider({ children }) {
         cartProduct,
         handleCoupanStatus,
         removeCartItem,
-        isCoupanApplied
+        isCoupanApplied,
+        getDiscount,
+        discount,
+        load
       }}
     >
       {children}

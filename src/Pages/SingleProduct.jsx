@@ -21,17 +21,20 @@ function SingleProduct() {
   const { isReg } = useContext(AuthContext);
   const toast = useToast();
 
-  const handleAdd = (e, i, p) => {
-    // checking authentication before adding product to cart
-    if (isReg) handleCartProduct(p, setLoading)
-    else toast({
-      title: 'Please Login/signup to add product to cart', position: 'bottom-left', status: 'error', duration: 3000, isClosable: true
-    });
-  };
 
   let path = window.location.pathname.split("/");
   let category = path[path.length - 2];
   let id = path[path.length - 1];
+
+  const handleAdd = (p) => {
+    // checking authentication before adding product to cart
+    if (isReg) {
+      if (id) handleCartProduct(p, setLoading);
+    }
+    else toast({
+      title: 'Please Login/signup to add product to cart', position: 'bottom-left', status: 'error', duration: 3000, isClosable: true
+    });
+  };
 
   useEffect(() => {
     fetchSingleProduct({ category, id }).then((res) => {
@@ -78,65 +81,51 @@ function SingleProduct() {
             {data.packsize}
           </Text>
           <Text textAlign={"justify"}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Exercitationem at nam tempora voluptatem error hic vitae, excepturi
-            iure nulla ducimus in. Atque minima accusantium quibusdam
-            praesentium nisi eligendi, nesciunt quas. Minus ex, qui eum ipsa,
-            libero commodi consequuntur autem quos minima corrupti unde at,
-            dolorum doloremque nobis eius cumque culpa enim voluptas aliquam
-            illum alias aperiam soluta optio. At, aspernatur! Quam repudiandae
-            sapiente mollitia, commodi dicta, eaque natus officiis delectus
-            autem esse distinctio tempore cupiditate fuga quidem optio veniam
-            accusantium aperiam perspiciatis quae quia tempora. Error
-            consequatur modi id repudiandae. Vero provident recusandae porro,
-            neque vel autem pariatur unde voluptates? Perspiciatis commodi aut,
-            molestias obcaecati delectus sunt voluptatem ab autem vero, nam
-            doloribus laborum ipsum tenetur ratione, eaque fugiat natus! Placeat
-            quidem nesciunt dolore saepe eum impedit natus quisquam iure
-            necessitatibus facere ipsum eaque incidunt consequuntur ipsam
-            voluptatem cum aliquam quasi architecto molestias a similique, ipsa
-            illo. Id, minima ipsam?
+            {category === "disease" ? data.description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem at nam tempora voluptatem error hic vitae, excepturi iure nulla ducimus in. Atque minima accusantium quibusdampraesentium nisi eligendi, nesciunt quas. Minus ex, qui eum ipsa,libero commodi consequuntur autem quos minima corrupti unde at,dolorum doloremque nobis eius cumque culpa enim voluptas aliquamillum alias aperiam soluta optio. At, aspernatur! Quam repudiandae sapiente mollitia, commodi dicta, eaque natus officiis delectusautem esse distinctio tempore cupiditate fuga quidem optio veniamaccusantium aperiam perspiciatis quae quia tempor Errorconsequatur modi id repudiandae. Vero provident recusandae porro,neque vel autem pariatur unde voluptates? Perspiciatis commodi aut, molestias obcaecati delectus sunt voluptatem ab autem vero, namdoloribus laborum ipsum tenetur ratione, eaque fugiat natus! Placeatquidem nesciunt dolore saepe eum impedit natus quisquam iurenecessitatibus facere ipsum eaque incidunt consequuntur ipsamvoluptatem cum aliquam quasi architecto molestias a similique, ipsaillo. Id, minima ipsam"}
           </Text>
         </Box>
       </Flex>
-      <Box minW={"25%"} p={"0 15px"} textAlign="justify">
-        <Heading color="#212121" fontSize={"25px"} mb={"10px"} fontWeight={600}>
-          Price
-        </Heading>
-        <Flex gap={"10px"} align="center">
-          <Text color="#212121" fontSize={"18px"} mb={"10px"} fontWeight={600}>
-            {data.price ? `₹${data.price}` : null}
-          </Text>
-          <Text
-            color="grey"
-            fontSize={"13px"}
-            mb={"10px"}
-            textDecor="line-through"
-            fontWeight={600}
+      {category === "disease" ? null :
+        <Box minW={"25%"} p={"0 15px"} textAlign="justify">
+          <Heading color="#212121" fontSize={"25px"} mb={"10px"} fontWeight={600}>
+            Price
+          </Heading>
+          <Flex gap={"10px"} align="center">
+            <Text color="#212121" fontSize={"18px"} mb={"10px"} fontWeight={600}>
+              {data.price ? `₹${data.price}` : null}
+            </Text>
+            <Text
+              color="grey"
+              fontSize={"13px"}
+              mb={"10px"}
+              textDecor="line-through"
+              fontWeight={600}
+            >
+              {data["strike-price"] ? `₹${data["strike-price"]}` : null}
+            </Text>
+            <Text fontSize={"13px"} mb={"10px"} color="green" fontWeight={600}>
+              {data["discount-percent"] ? `₹${data["discount-percent"]}` : null}
+            </Text>
+          </Flex>
+          <Button
+            isLoading={loading}
+            loadingText={"Adding"}
+            w={"100%"}
+            id={"btn" + id}
+            size={"md"}
+            onClick={() => handleAdd(data)}
+            borderRadius="5px"
+            bg={"#ff6f61"}
+            _hover={{
+              bg: "#ff4f61",
+            }}
+            color="#fff"
           >
-            {data["strike-price"] ? `₹${data["strike-price"]}` : null}
-          </Text>
-          <Text fontSize={"13px"} mb={"10px"} color="green" fontWeight={600}>
-            {data["discount-percent"] ? `₹${data["discount-percent"]}` : null}
-          </Text>
-        </Flex>
-        <Button
-          isLoading={loading}
-          loadingText={"Adding"}
-          w={"100%"}
-          id={"btn" + id}
-          size={"md"}
-          onClick={(e) => handleAdd(e, id, data)}
-          borderRadius="5px"
-          bg={"#ff6f61"}
-          _hover={{
-            bg: "#ff4f61",
-          }}
-          color="#fff"
-        >
-          Add To Cart
-        </Button>
-      </Box>
+            Add
+          </Button>
+        </Box>
+      };
+
     </Stack>
   );
 }

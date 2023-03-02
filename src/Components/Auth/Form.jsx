@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { postUserData } from "../API";
+import { fetchUser, postUserData } from "../API";
 import {
   Input,
   InputGroup,
@@ -124,20 +124,36 @@ function UserAuthForm({ mobileNumber }) {
       })
     } else {
       setLoader(true);
-      postUserData(userData)
-        .then((res) => {
-          onOpen();
-          handleIsReg(true);
-          handleUser(res.data);
-          setLoader(false);
+      fetchUser().then(res => {
+        let users = res.data;
+        let isExist = false;
+        users.forEach(user => {
+          if (user.email === email) {
+            isExist = true;
+            toast({
+              title: 'User already exists', position: 'bottom-left', status: 'error', duration: 5000, isClosable: true,
+            });
+            setLoader(false);
+            return;
+          }
         })
-        .catch((er) => {
-          setLoader(false);
-          onOpenAlert();
-        });
-      setUserData(intialData);
-    }
+        if (isExist === false) {
+          postUserData(userData)
+            .then((res) => {
+              onOpen();
+              handleIsReg(true);
+              handleUser(res.data);
+              setLoader(false);
+            })
+            .catch((er) => {
+              setLoader(false);
+              onOpenAlert();
+            });
+          setUserData(intialData);
+        }
+      })
 
+    }
   };
 
 

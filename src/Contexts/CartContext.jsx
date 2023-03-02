@@ -9,8 +9,10 @@ const fetchCartData = async (id) => {
   try {
     let res = await fetchUser();
     let users = await res.data;
-    let user = users.filter(u => u.id === id);
-    return user[0].cart;
+    if (users.length) {
+      let user = users.filter(u => u.id === id);
+      return user[0]?.cart || [];
+    } else return [];
   } catch (error) {
     console.log(error)
   }
@@ -118,7 +120,9 @@ function CartContextProvider({ children }) {
       let mrp = 0;
       let price = 0;
       let dis = 0;
-      let cart = res.data[0].cart;
+      const users = res.data;
+      let user = users.filter(u => u.id === userData.id);
+      let cart = user[0].cart;
       if (cart.length) {
         cart.forEach(product => {
           product["strike-price"] ? mrp += product["strike-price"] * product.quantity : mrp += product.price * product.quantity

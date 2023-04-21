@@ -22,18 +22,24 @@ import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import VerifyOtp from "./VerifyOtp";
 import ShowAlert from "../Utils/ShowAlert";
 import SucessAlert from "../Utils/SucessAlert";
-import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../Contexts/AuthContext";
-import { CartContext } from "../../Contexts/CartContext";
 
 function MobileAuthForm({ handleNumber, mobileNumber }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const toast = useToast();
   const {
     isOpen: isOpenAlert,
     onOpen: onOpenAlert,
     onClose: onCloseAlert,
   } = useDisclosure();
+
+  const handleOTP = () => {
+    toast({
+      title: 'Your OTP is  - 1234', position: 'top-right', status: 'info', duration: 4000, isClosable: true,
+    });
+    onOpen();
+  }
 
   return (
     <FormControl>
@@ -67,7 +73,7 @@ function MobileAuthForm({ handleNumber, mobileNumber }) {
       <Button
         bg={"#ff6f61"}
         onClick={() => {
-          return mobileNumber.length !== 10 ? onOpenAlert() : onOpen();
+          return mobileNumber.length !== 10 ? onOpenAlert() : handleOTP();
         }}
         _hover={{
           bg: "#ff4f61",
@@ -77,7 +83,7 @@ function MobileAuthForm({ handleNumber, mobileNumber }) {
         Continue
       </Button>
       <VerifyOtp isOpen={isOpen} onClose={onClose} />
-    </FormControl>
+    </FormControl >
   );
 }
 

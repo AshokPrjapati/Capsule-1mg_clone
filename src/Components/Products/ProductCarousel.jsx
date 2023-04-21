@@ -79,8 +79,8 @@ function ProductCarousel({ category }) {
         >
           {data.length
             ? data.map((p) => (
-                <CarouselCard key={p.title} p={{ ...p }} category={category} />
-              ))
+              <CarouselCard key={p.title} p={{ ...p }} category={category} />
+            ))
             : [1, 2, 3, 4, 5, 6, 7, 8].map((el) => <Load key={el} />)}
         </Flex>
       </Box>

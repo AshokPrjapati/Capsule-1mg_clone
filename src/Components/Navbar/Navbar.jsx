@@ -103,7 +103,6 @@ export default function WithSubnavigation() {
           >
             <NavLink to="/login">
               <Button
-                as={"a"}
                 fontSize={"sm"}
                 fontWeight={400}
                 variant={"link"}
@@ -117,7 +116,6 @@ export default function WithSubnavigation() {
 
             <NavLink to="/signup">
               <Button
-                as={"a"}
                 fontSize={"sm"}
                 fontWeight={400}
                 variant={"link"}

@@ -51,7 +51,7 @@ Capsule is e-commerce web application that allows you to buy medicine & health p
 
 <br />
 
-## Screens ( All screens are responsive along with Dark Mode)
+## Screens ( All screens are responsive)
 - Homepage / Landing Page
 - Product Listing Page with Filters
 - Product Description Page
